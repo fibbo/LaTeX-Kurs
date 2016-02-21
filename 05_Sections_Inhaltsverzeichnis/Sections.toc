@@ -1,0 +1,6 @@
+\select@language {ngerman}
+\contentsline {section}{\numberline {1}Einleitung}{2}
+\contentsline {subsection}{\numberline {1.1}Vertiefung der Einleitung}{2}
+\contentsline {subsubsection}{\numberline {1.1.1}Noch eine stufe tiefer (so wie Inception)}{2}
+\contentsline {paragraph}{Paragraph}{2}
+\contentsline {subparagraph}{Subparagraph}{2}

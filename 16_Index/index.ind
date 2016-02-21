@@ -1,0 +1,14 @@
+\begin{theindex}
+
+  \item fett, \textbf{1}
+
+  \indexspace
+
+  \item hello
+    \subitem Peter, 1
+
+  \indexspace
+
+  \item Peter, \see{hello}{1}
+
+\end{theindex}

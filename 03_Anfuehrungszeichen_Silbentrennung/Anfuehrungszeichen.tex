@@ -1,0 +1,23 @@
+\documentclass[10pt, a4paper]{article}
+\usepackage[T1]{fontenc} 
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+\setlength{\parindent}{0pt}
+\begin{document}
+``Test''  - englische Form\\
+"`Test"'  - deutsche Form oder \glqq So\grqq \\ %alternativ \glq \grq (braucht [ngerman]{babel}
+"<Test"> - franz"osische Form oder \flqq So\frqq %alternativ \flq \frq
+
+\vspace{1cm}
+Silbentrennung:
+
+\verb+\-+ \quad Wort wird nur an der Stelle getrennt werden k"onnen, wo dies so gekennzeichnet ist. Andere
+Trennstellen werden vom Trennalgorithmus ignoriert.
+
+\verb+"-+ \quad Stellt eine zus"atzliche Trennstelle her. Bei zusammengesetzten Nomen ist das hilfreich.
+Bsp: \verb+Schulhaus"-verwaltung+
+
+\verb+""+ \quad Definiert einen m"oglichen Zeilenwechsel wo dann kein zus"atzlicher Trennstrich eingef"ugt wird.
+Bsp: Di-""Methyl-""Aceton.
+\end{document}
