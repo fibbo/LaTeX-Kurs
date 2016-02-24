@@ -1,0 +1,54 @@
+\documentclass[11pt]{article}
+
+
+\usepackage{newfloat}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+
+
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+
+\usepackage{listings}
+
+% Python style for highlighting
+\lstset{
+language=Python,
+basicstyle=\ttm,
+otherkeywords={self, for},             % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__, np},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false            % 
+}
+
+\DeclareFloatingEnvironment[fileext=cds,placement={!ht},name=Code Snippet]{codesnippet}
+
+\captionsetup{margin=0pt,font=small,labelfont=sc,labelformat=simple,format=plain,indention=3mm,
+ labelsep=endash,textfont=sf,font=sf,singlelinecheck=on,figurename=Fig.,tablename=Tab.}
+
+\captionsetup[codesnippet]{margin=0pt,font=small,labelfont=sc,labelformat=simple,format=plain,indention=3mm,labelsep=endash,textfont=sf,font=sf,singlelinecheck=on}
+
+\fontfamily{ppl}\selectfont
+
+\setlength{\parskip}{1.5ex plus 0.5ex minus 0.2ex}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+  \listofcodesnippets
+\begin{codesnippet}[ht]
+  \begin{lstlisting}
+    asdf
+  \end{lstlisting}
+  \caption{test}
+\end{codesnippet}
+\end{document}
