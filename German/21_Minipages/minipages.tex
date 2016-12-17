@@ -1,0 +1,43 @@
+\documentclass[10pt, a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[ngerman]{babel}
+\usepackage{subfig}
+
+
+\begin{document}
+  \listoffloats
+\begin{table}
+\centering
+\begin{minipage}{0.5\textwidth}
+\begin{tabular}{cccc}
+a & b & c & d \\
+1 & 2 & 3 & 4
+\end{tabular} 
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+\begin{tabular}{cccc}
+a & b & c & d \\
+1 & 2 & 3 & 4
+\end{tabular}
+\end{minipage}
+\end{table}
+
+\begin{table}%
+\centering
+\subfloat[test1][long title 1 ]{\begin{tabular}{cccc}
+a & b & c & d \\
+1 & 2 & 3 & 4
+\end{tabular}}%
+\qquad
+\subfloat[test][long title]{\begin{tabular}{cccc}
+a & b & c & d \\
+1 & 2 & 3 & 4
+\end{tabular}}
+\caption{Here are the first two figures of a continued figure.}%
+\label{fig:cont}%
+\end{table}
+
+\end{document}

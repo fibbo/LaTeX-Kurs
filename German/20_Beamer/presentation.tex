@@ -1,0 +1,129 @@
+\documentclass[10pt, xcolor={table}]{beamer}
+\usepackage[]{graphicx}
+\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\usepackage{listings}
+
+
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}} 
+}
+
+
+
+\usepackage{alltt}
+
+\usepackage{url,verbatim}
+\usepackage[english]{babel}
+
+\usepackage{avant}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning,shapes,arrows,decorations.pathreplacing,calc,automata}
+% load extra stuff
+% \usetikzlibrary{shapes.misc,matrix,positioning,fit}
+
+% cross out text 
+\usepackage[normalem]{ulem}
+
+
+\usepackage[headheight=22pt]{beamerthemeboxes}
+%\usepackage{bbm}
+\usepackage{graphicx}
+\beamertemplatenavigationsymbolsempty 
+\setbeamercovered{transparent}
+
+% \definecolor{redve}{rgb}{0.604,0.008,0.00}
+\definecolor{redve}{rgb}{0,0.61,0.245}
+% \definecolor{uzh}{rgb}{0.188,0.522,0.306}
+\definecolor{uzh}{HTML}{0028a5}
+\setbeamertemplate{itemize item}{$\bullet$} 
+\setbeamercolor{title}{fg=uzh}
+\setbeamercolor{frametitle}{fg=uzh}
+\setbeamertemplate{sections/subsections in toc}[ball unnumbered]
+\setbeamercolor{section in toc}{fg=uzh,bg=white}
+\setbeamercolor{subsection in toc}{fg=uzh,bg=white}
+\setbeamercolor{result}{fg=black, bg=yellow}
+
+
+
+\addheadboxtemplate{\color[rgb]{1,1,1}}{\color{uzh} \underline{{\hspace{3pt}\includegraphics[scale=0.33]{pics/uzh_logo_e_pos} 
+\hspace{0.55\paperwidth}\color{black} \tiny MOB for subgroup analyses} \hspace{11pt}}}
+
+\addfootboxtemplate{\color[rgb]{1,1,1}}{\color{black} %\tiny \quad  %bla 
+\hfill \tiny
+\insertframenumber / \inserttotalframenumber \hspace{5pt}}
+
+
+%% set item distance
+\newlength{\wideitemsep}
+\setlength{\wideitemsep}{\itemsep}
+\addtolength{\wideitemsep}{0.3em}
+\let\olditem\item
+\renewcommand{\item}{\setlength{\itemsep}{\wideitemsep}\olditem}
+
+
+
+
+\author{\textbf{Philipp Gloor}}
+\title[Circle Hough transform]{New Approach to the Circle Hough
+Transform for Detecting Cherenkov
+Rings in the LHCb RICH detector
+}
+\date{March 17th, 2016}
+\institute[]{Physik Institut,\\[1em] 
+University of Zurich\\[2em]
+\includegraphics[width=0.3\textwidth]{pics/uzh_logo_e_pos}
+}
+% \titlegraphic{\includegraphics[width=0.3\textwidth]{uzh_logo_e_pos}\hspace*{4.75cm}}
+
+
+\usepackage{amsmath}
+\begin{document}
+\setbeamercolor{bgr}{fg=black,bg=uzh}
+
+\thispagestyle{empty}
+\begin{frame}
+  \transsplithorizontalout
+  %\vspace*{1,5cm}
+  \titlepage
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------------%
+
+
+\begin{frame}{Table}
+\tableofcontents
+\end{frame}
+
+\section{LHC} % (fold)
+\label{sec:lhc}
+
+% section lhc (end)
+
+\section{test} % (fold)
+\label{sec:lhcb}
+
+% section lhctextit (end)
+
+
+\end{document}
