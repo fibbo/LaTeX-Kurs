@@ -3,162 +3,171 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
-\usepackage[ngerman]{babel} %Silbentrennung, ‚Ueberschriften wie Inhaltsverzeichnis, Bilder, Tabellen werden deutsch angeschrieben
-\usepackage[german=swiss]{csquotes}
-\usepackage{graphicx} %um grafiken einbinden zu können
-\usepackage{float} %erlaubt zB. einen Rahmen um eine Float-Umgebung zu zeichnen
-\usepackage{endnotes} %Für Endnoten
-\usepackage{pifont} %Erlaubt die Verwendung von speziellen Symbolen via \ding{nummer}
-\usepackage{hyperref} %macht aus \ref klickbare links, erlaubt den Gebraucht von \nameref{}
-\usepackage{booktabs, threeparttable} %booktabs erlaubt \toprule, \midrule, \bottomrule. threeparttable ist u.a. dazu da, dass man die caption so breit wie die tabelle haben kann.
+\usepackage[english]{babel} %Hyphenation, titles, captions, tables in English (for more languages please refer to the babel manual)
+\usepackage{csquotes} % Needed by babel
+\usepackage{graphicx} %To include graphics
+\usepackage{float} %Allows drawing of border around float - also used to define new float environments
+\usepackage{endnotes} %Endnotes - footnotes that appear at the end.
+\usepackage{pifont} %Font for picture symbols
+
+\usepackage{booktabs}  %booktabs allows \toprule, \midrule, \bottomrule.
+\usepackage{threeparttable} % threeparttable allows table notes, and adjusting the width of the caption to the width of the table
 
 
 % Mit den folgenden 3 Parametern kann man das Verhalten von LaTeX in Bezug auf Gleitumgebungen/Text steuern. Normalerweise ist es nicht moeglich, eine einzelne Seite nur mit floats zu fuellen. Passt man aber folgende Parameter an, erlaubt man LaTeX mehrere Floats auf einer Seite zu platzieren, auch wenn nur sehr wenig dieser Seite mit Text gefuellt ist
 
-\renewcommand{\textfraction}{0.001}
-\renewcommand{\topfraction}{0.999}   
-\renewcommand{\bottomfraction}{0.999}
+% With the next 3 parameters you can control the behaviour of latex how it handles floats and text. Normally it is not possible to fill a single page with only floats because LaTeX tries to achieve a certain text/float ratio per page. With these paremters this can be changed.
 
-% Paket um mit Tikz zeichnen zu koennen
+\renewcommand{\textfraction}{0.001} % having very little text on a page is OK
+\renewcommand{\topfraction}{0.999}  % Having many floats in the upper half is OK
+\renewcommand{\bottomfraction}{0.999} % Having many floats in the lower half is OK
+
+% The omnipotent drawing package
 \usepackage{tikz}
 
-% Mathpackages
+% Math packages
 \usepackage{amsmath} 
 \usepackage{amsfonts}
 \usepackage{amssymb}
+
+% Change page dimensions/borders
 \usepackage[top=2.5cm, left=2cm, right=2.5cm, bottom=2cm]{geometry}
 \usepackage{a4}
 
-% Indexverzeichnis
+% Index directory
 \usepackage{makeidx}
 \makeindex
 
-% Bibliographie Packages
+% Bibliography packages
 \usepackage[style=authoryear, backend=biber, maxnames=5]{biblatex}
 \addbibresource{bibliography.bib}
 
 
-\pagestyle{headings} %standard headings. Andere optionen: plain, empty
 
+\pagestyle{headings} %standard headings. other options: plain, empty
+
+
+% Custom command
 \newcommand{\ltx}{\LaTeX}
+
 %\linespread{1.2}\selectfont % Global Zeilenabstände ändern
 
 \setlength{\belowcaptionskip}{2ex}
 \setlength{\abovecaptionskip}{1ex}
 
-% Neudefinition von Marginalien
-% Mehr Info hier: http://tex.stackexchange.com/questions/48571/redefine-marginpar-with-renewcommand
+% Redefinition of margin parameters
+% More information: http://tex.stackexchange.com/questions/48571/redefine-marginpar-with-renewcommand
 \let\oldmarginpar\marginpar
 \renewcommand{\marginpar}[1]{\oldmarginpar{\textit{#1}}}
 
 
 
 
-% Titelseite
-\title{\ltx{} leicht gemacht}
-\author{Hans Muster\\ Universität Hier\thanks{hans.musterman@uni-hier.edu} \and Peter Lustig\\Universität Dort\thanks{peter.lustig@uni-dort.edu}}
+% Title page
+\title{\ltx{} made easy}
+\author{John Doe\\ University Here\thanks{hans.musterman@uni-here.edu} \and Michael Smith\\University there\thanks{peter.lustig@uni-there.edu}}
 
-% Dokumentbeginn
+% Should be loaded last to avoid overwriting of package settings
+\usepackage{hyperref} %Creates clickable references in the document - ideally loaded last in the document preambel
+
+%%%%%%%% BEGIN OF DOCUMENT %%%%%%%%
 \begin{document}
 
 \maketitle
 \tableofcontents
 \newpage
 
-\section{Einfacher als sein Ruf}
+\section{Easier than its reputation}
 
-Für ein \enquote{einfaches} \ltx-Dokument braucht es nur eine Hand voll Befehle. Nicht einmal um die Formatierung müssen Sie sich kümmern, sondern können sich voll und ganz dem Text widmen.
+For a ``simple'' \ltx-document only a handful of commands are needed. You do not even have to care aboutr formatting but can instead completely focus on the text.
 
-Den grössten Teil des Fliesstextes können sie wie gewohnt eingeben, nur wenige Sonderzeichen\index{Sonderzeichen} benötigen spezielle Befehle. Dank dem Zusatzpaket ngerman können sie Umlaute als \verb+"+a (ä), \verb+"+o (ö), etc. eingeben. Es gibt auch Möglichkeiten, die Umlaute einzutippen, wie Sie es sich gewohnt sind (Zusatzpaket fontenc/inputenc), jedoch sind diese \ltx-Dokumente dann nicht mehr plattformübergreifend funkionsfähig.
+Apart from a few special characters, the majority of the text can be typed as you usually do.
 
-\section{Einfache Textformatierung}
+\section{Simple text formatting}
 
-Einen neuen Absatz erzeugen Sie, indem Sie im Code (mindestens) eine Leerzeile einfügen. Dabei spielt es keine Rolle, ob es sich um eine oder zehn Leerzeilen handelt. Sie können so also keine vertikalen Abstände erzeugen; dazu werden spezielle Befehle benötigt.
+A new paragraph can be produced if you insert at least one empty line. It does not matter whether it is one or many empty lines it all ends up creating just a simple new paragraph. So unlike in Word you can not format your documents with many new lines. Same applies to spaces: one or many spaces always only insert a simple space.
 
-\subsection{Silbentrennung und Trennstriche}
+\subsection{Hyphenation and dashes}
 
-Um die Silbentrennung brauchen Sie sich grösstenteils gar nicht zu kümmern, das erledigt \ltx{} für Sie. Natürlich gibt es Ausnahmen, wo sie \ltx{} mit den korrekten Trennstellen auf die Sprünge helfen müssen.
+You do not have to care about hyphenation. \ltx\ will take care of this. However if there is a word that you want to have hyphenated differently, there are options to achieve this.
 
-Trennstriche geben Sie ein wie gewohnt, wohingegen Gedanken- bzw. Streckenstriche (sogennante Halbgeviertsstriche) -- sollten Sie solche benötigen -- mit \verb+--+ erzeugt werden. Auch die doppelt so langen Geviertsstriche (---) können Sie erzeugen (\verb+---+). Während diese im englischsprachigen Amerika als Gedankenstriche verwendet werden, finden sie sich in deutschsprachigen Dokumenten nur in Tabellen bei Währungsbeträgen wieder.
+There are different types of dashes. The normal dash (-) -- used to connect words -- and the so called \textit{Halbgeviertstrich}: -- which is just 2 consecutive dashes or the long version of this (---) (3 consecutive dashes).
+
 
 \subsection{Anführungen}
-Anführungszeichen\index{Anführungszeichen!Gänsefüsschen} werden in \ltx{} traditionellerweise mit \`{}\`{} \verb+''+ (`` '') erzeugt, was jedoch die in Amerika üblichen Anführungszeichen generiert. Gebräuchlicher bei uns sind die deutsche "\`{} "\verb+'+ ("` "') oder die französische Anführung \verb+"< ">+ ("< ">).
+Quotation marks\index{Quotations} are normally set with \`{}\`{} \verb+''+ (`` ''). For German quotes use "\`{} "\verb+'+ ("` "') or for French \verb+"< ">+ ("< ">).
 
 \begingroup
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1.5ex plus 0.5ex minus 0.2ex}
-\section{Textformatierung\label{sec:eftf}}
+\section{Text formatting\label{sec:eftf}}
 
-\subsection{Zeichen}
+\subsection{Characters}
 
-\subsubsection{Deutsche Spezifika}
-Die deutschen Umlaute ä, ö, ü, Ä, Ö und Ü sind in den deutschsprachigen Texten natürlich überall zu finden. Auch die "`Gänsefü\ss chen"' sollten Sie in dieser korrekten Weise setzen.
+\subsubsection{Special characters}
+If you want to use non ASCII characters (like é or ł ą ę) it is recommended to use UTF8 encoded input and a font that also supports these characters (most fonts support characters used in French, Polish, Italian and others). This is also why the document loads \texttt{fontenc} and \texttt{inputenc} with the option \texttt{T1} and \texttt{utf8} respectively.
 
-\subsubsection{Andere Sonderzeichen}
-Häufiger benötigen Sie einige Akzentzeichen, z.B. Acute-Akzent é und der Grave-Akzent à. Bei rechtlichen Fragestellungen werden Sie auch das §-Zeichen benötigen. Fortsetzungspunkte (\dots) und Gedankenstriche (--) werden mit speziellen \ltx-Befehlen gesetzt.
-
-\subsection{Absätze}
-Dieser Text enthält sowohl Absätze auch einfach Zeilenumbrüche. Für den Abschnitt \ref{sec:eftf} (beginnend auf Seite \pageref{sec:eftf}) wurde vereinbart, dass für die erste Zeile eines Absatzes keinen Einzug verwendet wird.
+\subsection{Paragraphs}
+This text contains both paragraphs and simple new lines. For section \ref{sec:eftf} (starting on page \pageref{sec:eftf}) it has been set that for the first line of every paragraph there is no indentation.
 
 \begingroup
-\raggedright %für linksbündig
-Der Abstand zwischen den Absätzen soll 1.5ex betragen, der um maximal 0.5ex aufgeweitet und um höchstens 0.2ex gestaucht werden kann. Dieser und der folgende Absatz sollen linksbündig ausgerichtet werden.
+\raggedright % Left justified
+The spacing between paragraphs should be 1.5ex, can be extended at most by 0.5ex and reduced by at most 0.2ex. This paragraph and the next should be left justified. 
 
 \vspace{1cm}
-\subsection{Sonstiges} 
-Hier wurde $1$\,cm \fbox{zusätzlicher} Platz vor dem Absatz eingesetzt. 
+\subsection{Misc.} 
+An \fbox{additional} $1$\,cm has been inserted before this paragraph.
 \endgroup
 \endgroup
 
-\section{Visuelle Formatierung}
-Beim grössten Teil der Formatierbefehle im Abschnitt~\ref{sec:eftf} \nameref{sec:eftf} handelt es sich um \textit{visuelle Formatierung}, d.h. die Formatierbefehle\index{Formatierbefehle!Beispiel} beschreiben, wie der Text \textit{aussehen} soll. In der Praxis werden sie Ihre Texte \textsc{\textbf{nie}} auf diese Weise formatieren (ausser in wenigen wohlbegründeten Ausnahmen).
-Stattdessen verwenden Sie Befehle zur \textit{logischen Formatierung} (häufig auch generische Formatierung genannt), die beschreiben, welchen Stellenwert ein bestimmter Textteil in Bezug auf die Dokumentstruktur oder den Inhalt hat\index{Sonderzeichen}.
+\section{Visual formatting}
+Most of the formatting done in section~\ref{sec:eftf} \nameref{sec:eftf} are of visual nature i.e. the commands describe how the text should look like. For all practical purposes you ideally should not use these kinds of commands (of course there are justified exceptions). Better is it to use logical formatting which describes which significance a certain part of the text has with respect to the document structure or its content.
 
-\section{Schriften mit \ltx}
+\section{Fonts in \ltx}
 
-Der Schriftstil wird in \ltx{} durch 3 Merkmale definiert:
+The font style in \ltx{} is defined by 3 features:
 
 \begin{enumerate}
-\item Schriftfamilie
+\item Font family
 \begin{itemize}
-\item Serifenschriften (roman): proportionale Schriften mit kleinen Hilfslinien an jedem Buchstaben auf H\"ohe der Schriftlinie (Serifen);
-\item \textsf{serifenlose Schriften: proportionale Schriften ohne Hilfslinien auf der Schriftlinie};
-\item \texttt{Schreibmaschinenschriften: Alle Zeichen haben die gleiche Breite (diktengleich)};
+\item Fonts with serifs (roman): proportional fonts with small helper lines attached to each letter.
+\item \textsf{Sans serif fonts: proportional fonts without helper lines}.
+\item \texttt{Typewriter fonts: monospaced font}.
 \end{itemize}
-\item Schriftst\"arke:
+\item Font weight:
 \begin{itemize}
-\item normale Schriftstärke
-\item \textbf{fette Schriften\index{fett|textbf}}
+\item normal weight
+\item \textbf{bold weight\index{fett|textbf}}
 \end{itemize}
-\item Schriftform:
+\item Form of the font:
 \begin{itemize}
-\item aufrechte Schriften
-\item \textsl{geneigte Schriften}
-\item \textit{kurisve Schriften}
-\item \textsc{Schriften in Kapitälchen}
+\item Upright fonts
+\item \textsl{Slanted fonts}
+\item \textit{Italic fonts}
+\item \textsc{Small caps}
 \end{itemize}
 \end{enumerate}
 
-Auch wenn in \ltx{} viele Befehle existieren, mit welchen sich Schriftaren, Schriftgrössen und Schriftformen manipulieren lassen, sollte man sich eine allgemeingültige Aussage immer vor Augen halten:
+Even though there are many options to manipulate font face, weight and style there is one rule you should always remember:
 \begin{quote}
-Typographisches Design ist ein Handwerk, das erlernt werden muss. Ungeübte Autoren machen dabei oft gravierende Fehler. Fälschlicherweise glauben viele Laien, dass Textdesign vor allem eine Frage der Ästhetik sei: Sobald das Schriftstück "`schön aussehe"', sei das Ziel erreicht. Da Schriftstücke jedoch gelesen werden und nicht als Kunstwerke in einem Museum aufgehängt werden sollen, sind die leichtere Lesbarkeit und bessere Verständlichkeit jedoch viel wichtiger als das "`schöne Aussehen"'.
+Typography is a trade that has to be learned. Someone not trained in this often makes disastrous mistakes. Many people mistakenly believe that the design of a text is mostly aestethics and a ``nice look'' is the ultimate goal -- which is a mistake. A text is to be read and not to be wondered at in a museum. Readability and intelligibility are much more important than the ``nice looks''.
 \end{quote}
 
-\noindent Wir geben Ihnen hier noch einige Tipps, an welche Sie sich beim Erstellen Ihrer Dokumente halten sollten:
+\noindent Here a few pointers that you should consider when you write your text:
 \begin{itemize}
-\item[\ding{43}] Umfangreiche Texte sollten Sie in einer Serifenschrift setzen.
-\item[\ding{43}] Hervorhebungen in einem Text können Sie durch \textsl{geneigte Schriften} oder durch \textit{kursive Schriften} vornehmen. \textit{Kursive Schriften} sind durch ihre andere Gestaltung meist etwas auffälliger als die \textsl{geneigten Schriften}. \textbf{Fette Schriften} betonen dagegen sehr stark.
-\item[\ding{43}]  \textsf{Serifenlose Schriften sind hingegen gut geeignet für Überschriften und plakative Texte}
-\item[\ding{43}] Weniger ist oft mehr: Vermeiden Sie die den häufigsten Fehler im Umgang mit \ltx! Überlassen Sie die Formatierung Ihrer Texte \ltx{} und verwenden Sie Ihre Arbeitszeit zum Verfassen Ihrer Texte.
+\item[\ding{43}] Extensive texts should be set with a serif font.
+\item[\ding{43}] Highlighting in a text can be done with slanted or italic form. Italic fonts highlight better than slanted. Really important parts can be highlighted with bold faced text.
+\item[\ding{43}]  \textsf{Text sans serif are suitable for headers and titles}
+\item[\ding{43}] Less is more: Do not try to overdesign your text. Leave most work to \ltx.
 \end{itemize}
 
 
 \begin{table}[t]
-\caption{Mustertabelle zur Aufgabe 8  \label{tab:Schriftgroessen}}
+\caption{Example table  \label{tab:Schriftgroessen}}
 \centering
 \begin{tabular}{lccc}
 \toprule
-\textbf{\ltx-Befehl} & \multicolumn{3}{c}{\textbf{Basisschriftgrösse}}\\
+\textbf{\ltx-Command} & \multicolumn{3}{c}{\textbf{Base size}}\\
 \cline{2-4} & \textbf{10pt} & \textbf{11pt} & \textbf{12pt}\\
 \midrule
 \midrule
@@ -180,7 +189,7 @@ Typographisches Design ist ein Handwerk, das erlernt werden muss. Ungeübte Auto
 \end{tabular}
 \end{table}%
 
-\section{Ein Tabellenbeispiel}
+\section{Table example}
 Tabelle \ref{tab:Schriftgroessen} stellt die real benutzten Schriftgrössen für die \ltx-Schriftgrössenbefehle in Abhängigkeit von der Basisschriftgrösse dar.\par
 Die kleinste darstellbare Schrift ist 5pt, die grösste 25pt hoch. Die Schriften werden in der Regel in diskreten, gut miteinander harmonierenden Grössen benutzt.
 
