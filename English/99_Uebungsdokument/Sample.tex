@@ -14,8 +14,6 @@
 \usepackage{threeparttable} % threeparttable allows table notes, and adjusting the width of the caption to the width of the table
 
 
-% Mit den folgenden 3 Parametern kann man das Verhalten von LaTeX in Bezug auf Gleitumgebungen/Text steuern. Normalerweise ist es nicht moeglich, eine einzelne Seite nur mit floats zu fuellen. Passt man aber folgende Parameter an, erlaubt man LaTeX mehrere Floats auf einer Seite zu platzieren, auch wenn nur sehr wenig dieser Seite mit Text gefuellt ist
-
 % With the next 3 parameters you can control the behaviour of latex how it handles floats and text. Normally it is not possible to fill a single page with only floats because LaTeX tries to achieve a certain text/float ratio per page. With these paremters this can be changed.
 
 \renewcommand{\textfraction}{0.001} % having very little text on a page is OK
@@ -194,52 +192,48 @@ Table \ref{tab:Schriftgroessen} shows the font size for the \ltx font size comma
 
 The smallest font size is 5~pt the largest 25~pt.
 
-\section{Bilder in \ltx}
-\ltx{} erlaubt die Erstellung von Grafiken direkt mit \ltx-Befehlen als auch die Einbettung von extern erzeugten Grafik-Dateien. Zu beiden Varianten werden nachfolgend Beispiele gezeigt.
+\section{Images in \ltx}
+\ltx{} allows the creation of graphics directly with \ltx commands as embedding external image files. Both option will be shown in the following examples.
 
+\subsection{Line figures with \ltx commands}
 
-
-
-\subsection{Strichgrafiken mit \ltx-Befehlen}
-
-\ltx{} erlaubt die Erstellung von Grafiken direkt mit \ltx-Befehlen. Ein Beispiel dazu zeigt Abbildung \ref{fig:tikz}. Tikz ist ein zus"atzliches Paket, das in der Pr"aambel geladen wird.
-Mit Tikz sind die Moeglichkeiten fast zahllos, man muss ledliglich eine Idee haben, die man umsetzen will. F"ur mehr Informationen zu Tikz kann man diese minimale Einf"uhrung in Tikz durchlesen:
-\url{http://cremeronline.com/LaTeX/minimaltikz.pdf}
+\ltx{} allows the creation of plots directly via \ltx-commands. One example can be seen in fig.~\ref{fig:tikz}. Tikz is an additional package like many which has to be loaded in the
+preamble. With Tikz one has endless possibilities, all you need is an idea how to put it to paper. For more information please read \textit{A very minimal introduction to Tikz} (\url{http://cremeronline.com/LaTeX/minimaltikz.pdf}).
 %
 \begin{figure}[t]
 \centering
 \begin{tikzpicture}[scale=0.6]
-% Koordinatensystem
+% Create coordinate system
 \draw [->] (-5,0) -- (5,0);
 \draw [->] (0,-5) -- (0,5);
 
-% Beschriftung vom Koordinatensystem
+% Label axis
 \node [below] at (5,0) {$x$};
 \node [left] at (0,5) {$y$};
 
-% Wiederholte vertikale Linien im 1. Quardrant
+% Repeat vertical line in the 1. quadrant
 \foreach \x in {0.25, 0.5, 0.75,...,3} {
 \draw (\x, 0) -- (\x, 3);
 }
 
-% Das Viereck - cycle schliesst den letzten Punkt mit dem ersten Punkt
+% The rectangle: cycle connects the last point with the first.
 \draw (-3,-3) -- (-3,3) -- (3,3) -- (3,-3) -- cycle;
 
-% Einfache diagonale Linie
+% Diagonal line
 \draw (-4,-4) -- (4,4);
 
-% Aufteilung der Koordinatenachse, fuer x und y - einfach jeweils die Argumente vertauscht
+% Separation of the coordinate axis
 \foreach \t in {-4,-3,...,4}{
 \draw (\t, -0.2) -- (\t, 0.2);
 \draw (-0.2,\t) -- (0.2,\t);
 }
 \end{tikzpicture}
-\caption{Eine Tikz-Grafik\label{fig:tikz}}
+\caption{A Tikz figure\label{fig:tikz}}
 \end{figure}
 
 
-\subsection{Etwas Geschichte -- Einbettung von Grafiken}
-Am Anfang stand ein Buchprojekt. Der Informatik-Professor Donald Knuth setzte den ersten Band seines Werkes "<The Art of Computer Progrmaming"> 1969 mit Monotype, eine Technologie aus dem 19. Jahrhundert. Als 1976 der zweite Band erscheinen sollte, war die Monotype-Technologie mehrheitlich durch den fotografischen Textsatz ersetzt worden. Als Knuth die ersten Proof-Bögen erhielt, fand er diese schrecklich. So begann er 1977 damit, ein eigenes Textsatzsystem zu schreiben -- \TeX war geboren.
+\subsection{Some history -- embedding of pictures}
+In the beginning there was a book project. IT professor Donald Knuth typeset the first volume of his book ``The Art of Computer Progrmaming'' 1969 with \textit{Monotype} a technology from the 19\(^{\text{th}}\) century. In 1976 when the second volume was about to be published, most of the monotype technology has been replaced by photographic typesetting. When Knuth received the pages to proofread he thought them to be awful and thus he began in 1977 to write his own typesetting system -- \TeX was born.
 
 \begin{figure}[htb]
 \centering
@@ -247,58 +241,55 @@ Am Anfang stand ein Buchprojekt. Der Informatik-Professor Donald Knuth setzte de
 \caption{Leslie Lamport\label{fig:LL}}
 \end{figure}
 
-\TeX{} bietet sehr viele Möglichkeiten zur Textformatierung, ist jedoch schwierig und umständlich in der Anwendung. Der Informatiker Leslie Lamport (siehe Abbildung \ref{fig:LL}) war jedoch der Meinung, ein Author solle sich vor allem auf seinen Text konzentrieren und sich nicht mit Formatierungen herumschlagen müssen. So begann er 1984 damit, ein Makropaket zu \TeX{} zu entwickeln, das dem Benutzer viele Formatierungsentscheidungen und sonstige Aufgaben abnimmt -- \ltx{}.
+\TeX{} offers many option for text formatting but it is difficult and cumbersome to use. Leslie Lamport, an American computer scientist believed that an author should focus on content and not formatting. In 1984 he began writing a macro package for \TeX{} which takes responsibility for many formatting decisions and many other simplifications -- \ltx.
 
-\section{Grundelemente des Formelsatzes}
+\section{Basics of math typesetting}
 
-Wissenschaftliche Arbeiten mit vielen Formeln stellen hohe Ansprüche an das Textsystem, denn mathematische Ausdrücke und Formeln werden anders behandelt als der normale Fliesstext. Ein Schwerpunkt bei der Entwicklung von \TeX{} und \ltx{} lag auf einem hochwertigen, den wissenschaftlichen und mathematischen Konventionen entsprechenden Formelsatz. Demzufolge bietet \ltx{} standardmässig viele Möglichkeiten, mathematische Formeln zu setzen.
+Scientific papers with a lot of formulas set a high requirement to the typesetting system because mathematical expressions and formulas should be treated differently that running text. One emphasis of the development of \TeX{} and \ltx{} was on a high-quality for the mathematical typesetting to be in accordance with the conventions.
 
 \begingroup
 \floatstyle{boxed}
 \restylefloat{figure}
 \begin{figure}[p!] %p erzielt, dass die figure auf einer Seite speziell für floats platziert wird
-Gegeben sei die Funktionenschar
+Given the family of functions
 \begin{displaymath}
 f_a(x) = \frac{x+a}{x^2}~\mbox{mit } a \in \mathbb{R}
 \end{displaymath}
 \begin{enumerate}
-\item Untersuchen Sie die Funktionenschar \( f_a\) auf ihre maximale Definitionsmenge \(\mathbb{D}\). Bestimmen Sie alle Asymptoten der Graphen sowie das Verhalten der Graphen an den Grenzen des Definitionsbereichs.
-\item Weisen Sie nach, dass zwei verschiedene Graphen der Schwar keinen gemeinsamen Punkt besitzen, aber sich für \(x\to\infty\) beliebig nahe annähern.
-\item Zeichnen Sie den Graphen \(G_{f_1}\) im Intervall \(I = \left[-4;4\right]\) in ein geeignetes Koordinatensystem.
-\item Zeigen Sie, dass
+\item Investigate the family of functions \( f_a\) for it's maximum domain \(\mathbb{D}\). Determine the asymptotes for the graphs as the behavious of the graphs at the border of the domain.
+\item Proof that for two different graphs of the family there is no intersection but they approach each other arbitrary close at \(x\to\infty\).
+\item Draw the graph \(G_{f_1}\) in the range \(I = \left[-4;4\right]\) in a suitable coordinate system.
+\item Show that
 \begin{displaymath}
 F(x) = x +(x+1)\cdot\ln(x+1) - 2x\cdot\mbox{ln}(x)
 \end{displaymath}
-eine Stammfunktion zu \(\displaystyle g(x) = \ln\left(\frac{x+1}{x^2}\right)\) ist.
-\item Bestimmen Sie eine integralfreie Darstellung für die Integralfunktion
-
-\[ F_x(x) = \int\limits_2^x\ln(f_1(t))\mathrm{d}t \]
+is a primitive of \(\displaystyle g(x) = \ln\left(\frac{x+1}{x^2}\right)\) is.
 \end{enumerate}
-\caption{Ein einfaches Aufgabenblatt für Mathematiker}
+\caption{A simple maths sheet}
 \label{fig:formeln}
 \end{figure}
 \endgroup
 
-Es mag zunächst verwundern, was \ltx{} alles unter die Rubrik Formelsatz stellt. Hierzu gehören u.a.
+Part of the mathematical typesetting are:
 \begin{itemize}
-\item Zahlen, Variablen, Operatoren
-\item mathematische Symbole
-\item Namen von Funtkionen
-\item griechische Buchstaben
-\item das Hoch- und Tiefstellen von Zeichen und Texten
-\item komplette mathematische Formeln
-\item diverse Sonderzeichen
+\item Numbers, variables and operators
+\item Mathematical symbols
+\item Name of functions
+\item Greek letters
+\item Indices and exponents
+\item Complete mathematical formulas
+\item various special characters.
 \end{itemize}
 
-Dabei werden Zahlen und Operatoren in einer aufrechten Schrift, Variablennamen meist in einer kursiven Schrift ohne Kerning gesetzt.
+Numbers and operators are set in an upright style, variables mostly italic without kerning.
 
-Ein wichtiges Zusatzpaket für den Formelsatz ist das von der American Mathematical Society (\AmS) entwickelte Paket \textit{amsmath}, das neben weiteren Operatoren und Symbolen auch zusätzliche Strukturelemente und Gestaltungsmöglichkeiten beinhaltet. Es empfielt sich, dieses Zusatzpaket standardmässig mit einzubinden. Dazu muss es mittles \verb+\usepackage{amsmath}+ in der Präambel des \ltx-Dokuments geladen werden.
+A very important package for typesetting formulas is developed by the American Mathematical Society (\AmS) called \textit{amsmath} which in addition to operators and symbols also offers additional structuring elements and design possibilities. It is a good idea to load this package in any preamble (\verb+\usepackage{amsmath}+).
 
-Abbildung \ref{fig:formeln} zeigt eine Auswahl von Formelbefehlen. Ausserdem wird hier deutlich, dass in einer figure-Umgebung nicht zwingend ein Bild (im technischen Sinne) enthalten sein muss.
+Fig.~\ref{fig:formeln} shows a selection of formulas. Also it shows that a figure environment is not necessarily only for figures.ht zwingend ein Bild (im technischen Sinne) enthalten sein muss.
 
 \clearpage %beginnt eine neue Seite und platziert alle noch nicht gesetzten Floats
 
-\section{Fussnoten und Marginalien}
+\section{Footnotes and margin notes}
 
 Nachfolgend finden Sie ein Zitat aus dem Lehrbuch, ergänzt durch einige Anmerkungen der Kursautoren -- themabezogen als Fussnoten\marginpar{Fussnoten}:
 
