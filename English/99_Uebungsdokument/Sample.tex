@@ -119,7 +119,7 @@ An \fbox{additional} $1$\,cm has been inserted before this paragraph.
 \endgroup
 
 \section{Visual formatting}
-Most of the formatting done in section~\ref{sec:eftf} \nameref{sec:eftf} are of visual nature i.e. the commands describe how the text should look like. For all practical purposes you ideally should not use these kinds of commands (of course there are justified exceptions). Better is it to use logical formatting which describes which significance a certain part of the text has with respect to the document structure or its content.
+Most of the formatting done in section~\ref{sec:eftf} \nameref{sec:eftf} are of visual nature i.e. the commands describe how the text should look like. For all practical purposes you ideally should not use these kinds of commands (of course there are justified exceptions). It is better to use logical formatting which describes the significance a part of the text has with respect to the document structure or its content.
 
 \section{Fonts in \ltx}
 
@@ -154,7 +154,7 @@ Typography is a trade that has to be learned. Someone not trained in this often 
 \noindent Here a few pointers that you should consider when you write your text:
 \begin{itemize}
 \item[\ding{43}] Extensive texts should be set with a serif font.
-\item[\ding{43}] Highlighting in a text can be done with slanted or italic form. Italic fonts highlight better than slanted. Really important parts can be highlighted with bold faced text.
+\item[\ding{43}] Highlighting in a text can be done with \textsl{slanted} or \textit{italic} form. Italic fonts highlight better than slanted. Really important parts can be highlighted with \textbf{bold} faced text.
 \item[\ding{43}]  \textsf{Text sans serif are suitable for headers and titles}
 \item[\ding{43}] Less is more: Do not try to overdesign your text. Leave most work to \ltx.
 \end{itemize}
@@ -291,35 +291,36 @@ Fig.~\ref{fig:formeln} shows a selection of formulas. Also it shows that a figur
 
 \section{Footnotes and margin notes}
 
-Nachfolgend finden Sie ein Zitat aus dem Lehrbuch, ergänzt durch einige Anmerkungen der Kursautoren -- themabezogen als Fussnoten\marginpar{Fussnoten}:
+Following a quote from a textbook, suitably annotated with footnotes\marginpar{Footnotes}
 
 \begin{quote}
-Längere, zusätzliche Erklärungen werden meist nicht im Fliesstext eingefügt, da auf diese Weise schnell der Sinnzusammenhang verloren gehen kann. Stattdessen wird durch eine Markierung -- meist eine kleine hochgestellte Zahl\footnote{Üblicherweise in aufsteigender Reihenfolge.} -- auf sie verwiesen\footnote{Beachten Sie aber, dass auch eine Fussnote den Lesefluss beträchtlich stören kann. Wägen Sie immer ab, ob Sie die Anmerkung wirklich brauchen und ob diese im Fliesstext nicht besser aufgehoben wäre.}. Im Seitenfuss wird diese Markierung wiederholt und der erklärende Text in einer kleinen Schriftgrösse\footnote{Eben in der Grösse \textbackslash\texttt{footnotesize}.} ausgegeben. Zur deutlichen Trennung zwischen dem Fliesstext und den Fussnoten wird zwischen diesen Seitenbereichen eine kurze horizontale Linie mit entsprechendem Leerraum gesetzt\footnote{Es gibt auch Publikationen, wo diese Linie über die ganze Seitenbreite ausgezogen wird.}.
+Longer, additional explanations are often not placed within the running text since context can get lost quickly. Rather we set a marking -- often a raised number\footnote{often in increasing order} -- which refer to the explanation\footnote{be aware that too many footnotes can disturb the reading rhythm as well. Always consider if you really need this annotation and if you cannot keep it in the running text.}. In the footer this number will be repeated and the corresponding text will be typeset in a smaller font size\footnote{font size \texttt{footnotesize}}. For a clear separation between running text and footnotes a small horizontal line will be place between the two\footnote{some publications have a line across the whole page even.}.
 
-Im Fliesstext können Sie mit \ltx{} relativ einfach Fussnoten anbringen. Die Nummerierung wird dabei automatisch von \ltx{} verwaltet, so dass es auch im Nachhinein möglich ist, Fussnoten neu einzufügen oder zu löschen\footnote{Weiter verwaltet \ltx{} auch die Seite, wo der Fussnotentext erscheint. Dieser sollte immer auf der selben Seite stehen, wie die Fussnotenmarkierung. \ltx{} gelingt dies fast immer (ausser in einigen verzwickten Fällen), wohingegen Microsoft Word hier überdurchschnittlich oft scheitert.}. Die Nummerierung wird mit jedem Kapitel (Dokumentklassen \textit{report} und \textit{book}) wieder zurückgesetzt, so dass die Nummerierung der Fussnoten wieder bei Eins beginnt. Fussnoten können auch innerhalb der \textit{minipage}-Umgebung verwendet werden.
+It is quite simple to place footnotes in the running text. The numbering is handled automatically by \ltx{}. If you add more footnotes or delete some later the numbering will automatically be updated\footnote{Furthermore, \ltx{} also manages the page on which the footnote will appear which should always appear on the same page as the raised number. \ltx{} succeeds at this most of the time (except under some tricky circumstances) whereas Microsoft Word fails here above average.}. The numbering will be reset after every chapter (this concerns the document classes \textit{report} and \textit{book}). 
 
-Auf Grund der \ltx-internen Bearbeitung der Fussnoten gibt es einige Dokumentteile, in denen dieser Automatismus nicht korrekt funktioniert: z.B. in Tabellen, Gleitumgebungen, mathematischen Ausdrücken, \ltx-Boxen. In diesen Fällen bedarf es eines Umweges, um dort Fussnoten anzubringen.
 \end{quote}
 
-Auch bei Endnoten\marginpar{Endnoten} handelt es sich um erklärende Texte, die im Gegensatz zu Fussnoten aber gesammelt am Ende des Kapitels oder des Dokuments ausgegeben ewrden. Gerade bei längeren Anmerkungen oder vielen Anmerkungen pro Seite kann sich der Einsatz von Endnoten lohnen. \ltx{} benötigt für Endnoten \parencite{lkgt} -- im Gegensatz zu Fussnoten -- ein Zusatzpaket: \texttt{endnotes}. Da Endnoten tendentiell eher seltener als Fussnoten verwendet werden, werden wir in dieser Übung auf Endnoten verzichten.
+Another way to handle additional explanations are \textit{endnotes}\marginpar{endnotes}. Compared to footnotes endnotes can be gathered and placed at the end of a chapter or even at the end of a document. Especially with longer annotations or many small annotations per page it can be sensible to use endnotes instead of footnotes. In order to being able to use endnotes a package is needed: \texttt{endnotes}.
 
-Marginalien\marginpar{Marginalien} sind in einem gewissen Sinne ebenfalls Anmerkungen. Allerdings handelt es sich dabei nicht um längere, erklärende Texte, sondern eher um Hinweise, um bestimmte Stellen im Text zu kennzeichnen.
+Marginalis\marginpar{Marginalis} are also annotations in a sense. However these are of the shorter kind, small indicators to hint at something within the running text.
 
-\section{Literaturhinweise mit Bib\LaTeX}
-Bibliographie-Erstellung mit dem Zusatzprogramm Bib\LaTeX{} bedeutet, dass Sie Ihre Literatur in separaten Textdateien erfassen, welche als Bibliographie- dateien bezeichnet werden. Sie können zur Verbesserung der Übersichtlichkeit separate Bibliographiedateien für verschiedene Themengebiete anlegen.
+\section{Bibliography with Bib\LaTeX}
 
-Die einzelnen Referenzen schreiben Sie in die Dateien im Bib-Format, das eines der meistbenutzten Formate für Bibliographiesammlungen im Textformat ist und auch von anderen Programmen weiterverarbeitet werden kann. Bib-Dateien lassen sich z.B. bequem mit dem Programm "<JabRef"> bearbeiten, welches als Java-Applikation plattformübergreifend verfügbar ist.
-Das Programm Bib\LaTeX{} erledigt dann folgende Aufgaben für Sie:
+To create a bibliography with Bib\ltx{} a separate database file is recommend in which all the sources are listed with the respective data (author, year, publisher, etc.). 
+
+You will create your references in a .bib file (essentially a text file) with a 3rd party program. There are many different programs that can help with creating these references, for this course we will use \textit{Jabref} a program based on Java so it is running on any operating system.
+
+Once you have your database file, Bib\ltx{} will perform following tasks for you:
 \begin{itemize}
-\item Erstellung einer Liste aller im Text zitierter Dokumente
-\item Unterstützung für die Hinzunahme weiterer, nicht zitierter Dokumente
-\item Auswahl aus verschiedenen Layoutstilen, die Sie auch ändern oder komplett selber schreiben können (was allerdings absolut nicht trivial ist!)
-\item Automatische Formatierung der Referenzen gemäss dem gewählten Layoutstil
-\item Sortierung der Literaturliste
-\item Unterstützung von verschiedenen Referenzformen im Text
-\item Syntaxprüfung der Bibliographiedatei
-\item Prüfung der Eindeutigkeit von Schlüsseln
+\item Creating a list of all the cited sources in the document
+\item Support of adding additional non-cited sources
+\item Applying a bilbiography style (can be custom made but this is not trivial and goes beyond the scope of this course)
+\item Sorting the references according to style
+\item Syntax check of the bibliography file
+\item Checking the uniqueness of the keys
 \end{itemize}
+
+
 Mit der Benutzung von Bib\LaTeX{} gewinnen Sie aber mehr als das: Wer Bibliographiedateien im Bib-Format in grossem Ausmass benutzt wird es schnell als gutes Mittel zur Bibliographieverwaltung schätzen lernen. Als textbasiertes System, für das diverse graphische Oberflächen existieren (z.B: "<JabRef">), ist es auch gut zum Nachschlagen oder Austausch mit Kollegen. Da Sie beliebig weitere Felder hinzufügen können, ist es auch geeignet, um z.B. Quellenangaben oder Bibliotheksstandorte zu notieren, Schlüsselwörter zu vergeben, usw.
 
 
