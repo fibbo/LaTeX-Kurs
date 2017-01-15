@@ -3,14 +3,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage{url}
 
-\usepackage[ngerman]{babel}
+\usepackage[english]{babel}
 \usepackage{blindtext}
 
-\usepackage{float} %erlaubt zB. einen Rahmen um eine Float-Umgebung zu zeichnen
-\usepackage{graphicx} %um grafiken einbinden zu können
-\usepackage[leftcaption]{sidecap} %für side caption %optionen: outercaption, innercaption, leftcaption, rightcaption
+\usepackage{float} %To edit float behaviour
+\usepackage{graphicx} %To include images
+\usepackage[leftcaption]{sidecap} %Side captions %options: outercaption, innercaption, leftcaption, rightcaption
 
-% \usepackage[slc=on]{caption} %für subfloats
+% \usepackage[slc=on]{caption} %for subfloats
 % \usepackage{subcaption}
 \usepackage{threeparttable}
 
@@ -22,7 +22,7 @@
 \begin{document}
 \listoffigures
 \newpage
-\section{Verschiedene Anwendungen von Figure}
+\section{Different ways to include images}
 
 
 \begin{figure}[h]
@@ -91,17 +91,17 @@
 \restylefloat{figure}\restylefloat{table}
 \begin{figure}[h]
 
-Eine Figure kann auch einfach nur Text enthalten
+A figure can also contain just text!
 
 \blindtext
-\caption{\blindtext Ein einfaches Aufgabenblatt für Mathematiker\label{fig:formeln}}
+\caption{\blindtext \label{fig:formeln}}
 \end{figure}
 }
 
 
 \section{Labels in Captions}
 
-Hier noch eine Bemerkung zu den Labels innerhalb von Captions:
+A remark on labels in captions:
 \begin{quote}
 If you want to label a figure so that you can reference it later, you have to add the label after the caption (inside seems to work in \LaTeXe) but inside the floating environment. If it is declared outside, it will give the section number.\end{quote}
 
