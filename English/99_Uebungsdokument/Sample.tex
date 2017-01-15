@@ -63,7 +63,7 @@
 
 % Title page
 \title{\ltx{} made easy}
-\author{John Doe\\ University Here\thanks{hans.musterman@uni-here.edu} \and Michael Smith\\University there\thanks{peter.lustig@uni-there.edu}}
+\author{John Doe\\ University Here\thanks{john.doe@uni-here.edu} \and Michael Smith\\University there\thanks{michael.smith@uni-there.edu}}
 
 % Should be loaded last to avoid overwriting of package settings
 \usepackage{hyperref} %Creates clickable references in the document - ideally loaded last in the document preambel
@@ -89,11 +89,11 @@ A new paragraph can be produced if you insert at least one empty line. It does n
 
 You do not have to care about hyphenation. \ltx\ will take care of this. However if there is a word that you want to have hyphenated differently, there are options to achieve this.
 
-There are different types of dashes. The normal dash (-) -- used to connect words -- and the so called \textit{Halbgeviertstrich}: -- which is just 2 consecutive dashes or the long version of this (---) (3 consecutive dashes).
+There are different types of dashes. The normal dash (-) -- used to connect words -- and the double dash: -- which is just 2 consecutive dashes or the long version of this (---) (3 consecutive dashes).
 
 
-\subsection{Anführungen}
-Quotation marks\index{Quotations} are normally set with \`{}\`{} \verb+''+ (`` ''). For German quotes use "\`{} "\verb+'+ ("` "') or for French \verb+"< ">+ ("< ">).
+\subsection{Quotations}
+Quotation marks\index{Quotations} are set with \`{}\`{} \verb+''+ (`` ''). For German quotes use "\`{} "\verb+'+ ("` "') or for French \verb+"< ">+ ("< ">).
 
 \begingroup
 \setlength{\parindent}{0pt}
@@ -110,7 +110,7 @@ This text contains both paragraphs and simple new lines. For section \ref{sec:ef
 
 \begingroup
 \raggedright % Left justified
-The spacing between paragraphs should be 1.5ex, can be extended at most by 0.5ex and reduced by at most 0.2ex. This paragraph and the next should be left justified. 
+The spacing between paragraphs should be 1.5\,ex, can be extended at most by 0.5\,ex and reduced by at most 0.2\,ex. This paragraph and the next should be left justified. 
 
 \vspace{1cm}
 \subsection{Misc.} 
@@ -130,7 +130,7 @@ The font style in \ltx{} is defined by 3 features:
 \begin{itemize}
 \item Fonts with serifs (roman): proportional fonts with small helper lines attached to each letter.
 \item \textsf{Sans serif fonts: proportional fonts without helper lines}.
-\item \texttt{Typewriter fonts: monospaced font}.
+\item \texttt{Typewriter fonts: mono spaced font}.
 \end{itemize}
 \item Font weight:
 \begin{itemize}
@@ -148,7 +148,7 @@ The font style in \ltx{} is defined by 3 features:
 
 Even though there are many options to manipulate font face, weight and style there is one rule you should always remember:
 \begin{quote}
-Typography is a trade that has to be learned. Someone not trained in this often makes disastrous mistakes. Many people mistakenly believe that the design of a text is mostly aestethics and a ``nice look'' is the ultimate goal -- which is a mistake. A text is to be read and not to be wondered at in a museum. Readability and intelligibility are much more important than the ``nice looks''.
+Typography is a trade that has to be learned. Someone not trained in this often makes disastrous mistakes. Many people mistakenly believe that the design of a text is mostly aesthetics and a ``nice look'' is the ultimate goal -- which is a mistake. A text is to be read and not to be wondered at in a museum. Readability and intelligibility are much more important than the ``nice looks''.
 \end{quote}
 
 \noindent Here a few pointers that you should consider when you write your text:
@@ -156,7 +156,7 @@ Typography is a trade that has to be learned. Someone not trained in this often 
 \item[\ding{43}] Extensive texts should be set with a serif font.
 \item[\ding{43}] Highlighting in a text can be done with \textsl{slanted} or \textit{italic} form. Italic fonts highlight better than slanted. Really important parts can be highlighted with \textbf{bold} faced text.
 \item[\ding{43}]  \textsf{Text sans serif are suitable for headers and titles}
-\item[\ding{43}] Less is more: Do not try to overdesign your text. Leave most work to \ltx.
+\item[\ding{43}] Less is more: Do not try to over design your text. Leave most work to \ltx.
 \end{itemize}
 
 
@@ -166,23 +166,23 @@ Typography is a trade that has to be learned. Someone not trained in this often 
 \begin{tabular}{lccc}
 \toprule
 \textbf{\ltx-Command} & \multicolumn{3}{c}{\textbf{Base size}}\\
-\cline{2-4} & \textbf{10pt} & \textbf{11pt} & \textbf{12pt}\\
+\cline{2-4} & \textbf{10\,pt} & \textbf{11\,pt} & \textbf{12\,pt}\\
 \midrule
 \midrule
-\verb+\tiny+			& 5pt & 6pt 	& 6pt\\
-\verb+\scriptsize+		& 7pt & 8pt		& 8pt\\
-\verb+\footnotesize+	& 8pt & 9pt		& 10pt\\
-\verb+\small+			& 9pt & 10pt	& 11pt\\
+\verb+\tiny+			& 5\,pt & 6\,pt 	& 6\,pt\\
+\verb+\scriptsize+		& 7\,pt & 8\,pt		& 8\,pt\\
+\verb+\footnotesize+	& 8\,pt & 9\,pt		& 10\,pt\\
+\verb+\small+			& 9\,pt & 10\,pt	& 11\,pt\\
 \midrule
 \midrule
-\verb+\normalsize+		& 10pt	& 11pt	& 12pt\\
+\verb+\normalsize+		& 10\,pt	& 11\,pt	& 12\,pt\\
 \midrule
 \midrule
-\verb+\large+			& 12pt	& 12pt	& 14pt\\
-\verb+\Large+			& 14pt	& 14pt	& 17pt\\
-\verb+\LARGE+			& 17pt	& 17pt	& 20pt\\
-\verb+\huge+			& 20pt	& 20pt	& 25pt\\
-\verb+\Huge+			& 25pt	& 25pt	& 25pt\\
+\verb+\large+			& 12\,pt	& 12\,pt	& 14\,pt\\
+\verb+\Large+			& 14\,pt	& 14\,pt	& 17\,pt\\
+\verb+\LARGE+			& 17\,pt	& 17\,pt	& 20\,pt\\
+\verb+\huge+			& 20\,pt	& 20\,pt	& 25\,pt\\
+\verb+\Huge+			& 25\,pt	& 25\,pt	& 25\,pt\\
 \bottomrule
 \end{tabular}
 \end{table}%
@@ -233,7 +233,7 @@ preamble. With Tikz one has endless possibilities, all you need is an idea how t
 
 
 \subsection{Some history -- embedding of pictures}
-In the beginning there was a book project. IT professor Donald Knuth typeset the first volume of his book ``The Art of Computer Progrmaming'' 1969 with \textit{Monotype} a technology from the 19\(^{\text{th}}\) century. In 1976 when the second volume was about to be published, most of the monotype technology has been replaced by photographic typesetting. When Knuth received the pages to proofread he thought them to be awful and thus he began in 1977 to write his own typesetting system -- \TeX was born.
+In the beginning there was a book project. IT professor Donald Knuth typeset the first volume of his book ``The Art of Computer Programming'' 1969 with \textit{Monotype} a technology from the 19\(^{\text{th}}\) century. In 1976 when the second volume was about to be published, most of the monotype technology has been replaced by photographic typesetting. When Knuth received the pages to proofread he thought them to be awful and thus he began in 1977 to write his own typesetting system -- \TeX was born.
 
 \begin{figure}[htb]
 \centering
@@ -285,7 +285,7 @@ Numbers and operators are set in an upright style, variables mostly italic witho
 
 A very important package for typesetting formulas is developed by the American Mathematical Society (\AmS) called \textit{amsmath} which in addition to operators and symbols also offers additional structuring elements and design possibilities. It is a good idea to load this package in any preamble (\verb+\usepackage{amsmath}+).
 
-Fig.~\ref{fig:formeln} shows a selection of formulas. Also it shows that a figure environment is not necessarily only for figures.ht zwingend ein Bild (im technischen Sinne) enthalten sein muss.
+Fig.~\ref{fig:formeln} shows a selection of formulas. Also it shows that a figure environment is not necessarily only for figures.
 
 \clearpage %beginnt eine neue Seite und platziert alle noch nicht gesetzten Floats
 
@@ -302,7 +302,7 @@ It is quite simple to place footnotes in the running text. The numbering is hand
 
 Another way to handle additional explanations are \textit{endnotes}\marginpar{endnotes}. Compared to footnotes endnotes can be gathered and placed at the end of a chapter or even at the end of a document. Especially with longer annotations or many small annotations per page it can be sensible to use endnotes instead of footnotes. In order to being able to use endnotes a package is needed: \texttt{endnotes}.
 
-Marginalis\marginpar{Marginalis} are also annotations in a sense. However these are of the shorter kind, small indicators to hint at something within the running text.
+Marginalia\marginpar{Marginalia} are also annotations in a sense. However these are of the shorter kind, small indicators to hint at something within the running text.
 
 \section{Bibliography with Bib\LaTeX}
 
@@ -314,30 +314,27 @@ Once you have your database file, Bib\ltx{} will perform following tasks for you
 \begin{itemize}
 \item Creating a list of all the cited sources in the document
 \item Support of adding additional non-cited sources
-\item Applying a bilbiography style (can be custom made but this is not trivial and goes beyond the scope of this course)
+\item Applying a bibliography style (can be custom made but this is not trivial and goes beyond the scope of this course)
 \item Sorting the references according to style
 \item Syntax check of the bibliography file
 \item Checking the uniqueness of the keys
 \end{itemize}
 
 
-Mit der Benutzung von Bib\LaTeX{} gewinnen Sie aber mehr als das: Wer Bibliographiedateien im Bib-Format in grossem Ausmass benutzt wird es schnell als gutes Mittel zur Bibliographieverwaltung schätzen lernen. Als textbasiertes System, für das diverse graphische Oberflächen existieren (z.B: "<JabRef">), ist es auch gut zum Nachschlagen oder Austausch mit Kollegen. Da Sie beliebig weitere Felder hinzufügen können, ist es auch geeignet, um z.B. Quellenangaben oder Bibliotheksstandorte zu notieren, Schlüsselwörter zu vergeben, usw.
-
-
 \section{Indices}
-Lassen Sie uns zuerst Leslie Lamport, den Autoren von \ltx{} zum Thema zum Wort kommen:
+Leslie Lamport, author of \ltx{}, on indices:
 \begin{quote}
-Der Index soll dem Leser helfen, bestimmte Informationen im Dokument zu finden, und zwar so einfach wie möglich. Viele Verfasser indizieren Wörter, indem sie alle Seiten, auf denen ein bestimmter Begriff erscheint, auflisten. Ein guter Autor erstellt einen Index nach Konzepten -- Ideen, Fakten, Personen usw.
+A list of indices should make the finding of information in the document as easy as possible for the reader. Many authors are indexing the same words on every page where this word appears. A better approach would be to set the indices according to ideas, facts and concepts.
 
-Zur Erstellung eines Index müssen Sie sich zunächst überlegen, welche Konzepte Sie dort aufführen wollen. Danach müssen Sie herausfinden, nach welchen Schlagworten sich der Leser vermutlich orientiert, um ein Konzept zu finden. Sie müssen sich überlegen, welche Leserschaft das Buch haben wird, und wie die Leser das Konzept auffassen. Beschränken Sie sich nicht auf die Auflistung der Wörter, die Sie selbst zur Beschreibung des Konzeptes verwendet haben.
+For the creation of an index you should decide which concepts you want to list. Then you should decide for which key words a reader is most likely to search for, to find this concept. 
 
-Sie sind vielleicht versucht, das Stichwortverzeichnis bereits beim Schreiben des Dokumentes anzulegen. Widerstehen Sie dieser Versuchung. Es ist nahezu unmöglich, auf diese Weise einen guten Index zu erstellen. Fügen Sie beim Schreiben \verb+\index+-Befehle ein, damit Sie sich später daran erinnern, für welche Begriffe Sie Indexeinträge erstellen wollten, aber bereiten Sie sich darauf vor, diese Befehle noch einmal zu überarbeiten, wenn Sie den Index erstellen.
+You might be tempted to create the indices during the writing of your text. Try to resist this urge -- it is better to do this once the text and all the appearing concepts are finished and you have a clear idea how you want to index these concepts.
 \end{quote}
-Nehmen Sie sich diese Aussagen unbedingt zu Herzen\cite{dlb}, denn wie Sie auch an einem kurzen Text schon sehen können, nützt ein Index, wo jedes Vorkommen eines bestimmten Stichwortes aufgelistet wird, nicht sonderlich viel. Trotzdem wollen wir in diesem Beispieltext gleich davon abweichen, denn hier soll es um die Anwendung der Index-Befehle und nicht um das Endresultat gehen.
+
 
 \begin{table}[h!]
 \centering
-\caption{Übersicht der Indexierbefehle\label{tab:Indexbefehle}}
+\caption{Overview of indexing commands\label{tab:Indexbefehle}}
 \begin{tabular}{lll}
 \toprule
 Example &	Index Entry	 & Comment\\

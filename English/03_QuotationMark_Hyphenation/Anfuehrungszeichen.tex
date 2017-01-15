@@ -5,19 +5,16 @@
 
 \setlength{\parindent}{0pt}
 \begin{document}
-``Test''  - englische Form\\
-"`Test"'  - deutsche Form oder \glqq So\grqq \\ %alternativ \glq \grq (braucht [ngerman]{babel}
-"<Test"> - franz"osische Form oder \flqq So\frqq %alternativ \flq \frq
+``Test''  - english way\\
+"`Test"'  - german way, or with \glqq text \grqq \\ 
+"<Test"> - french way, or with \flqq text \frqq %alternativ \flq \frq
 
 \vspace{1cm}
-Silbentrennung:
+Hyphenation:
 
-\verb+\-+ \quad Wort wird nur an der Stelle getrennt werden k"onnen, wo dies so gekennzeichnet ist. Andere
-Trennstellen werden vom Trennalgorithmus ignoriert.
+\verb+\-+ \quad Hyphentation only happens at this position where set with this command. Other positions will be ignored by the algorithm.
 
-\verb+"-+ \quad Stellt eine zus"atzliche Trennstelle her. Bei zusammengesetzten Nomen ist das hilfreich.
-Bsp: \verb+Schulhaus"-verwaltung+
+\verb+"-+ \quad Additional position for hyphentation.
 
-\verb+""+ \quad Definiert einen m"oglichen Zeilenwechsel wo dann kein zus"atzlicher Trennstrich eingef"ugt wird.
-Bsp: Di-""Methyl-""Aceton.
+\verb+""+ \quad Avoids a second dash when a word is hyphenated at a dash e.g. Di-""Methyl-""Aceton.
 \end{document}

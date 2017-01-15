@@ -123,11 +123,11 @@
 }
 \newpage
 
-\section*{Vorwort}
+\section*{Preface}
 
-Dieses Dokument dient als kleines Nachschlagewerk für die Arbeit mit \LaTeX. Es ist bei weitem nicht komplett und kratzt höchstens an der Oberfläche der angesprochenen Themen. Um zum Beispiel mehr über die einzelnen Pakete zu erfahren lohnt es sich immer deren Dokumentation durchzulesen um die Funktionalitäten des jeweiligen Pakets besser zu verstehen. Alternativ kann man online das \LaTeX\ Wikibook (\url{https://en.wikibooks.org/wiki/LaTeX}) als erweitertes Kompendium konsultieren. Aber auch das deckt nur einen Bruchteil von \LaTeX\ ab.
+This document serves as a small compendium for working with \LaTeX. It is anything but complete but it should help to get you started in case you forgot some things. If you want to know more about a certain package it is always worth it to read the package documentation. If your \LaTeX\ folder is in your path environment you can use \texttt{texdoc} \textit{packagename} to open the documentation for said manual. Another good place to start is the \LaTeX\ wikibook \url{https://en.wikibooks.org/wiki/LaTeX}.
 
-Bei spezifischen Fragen zu \LaTeX\ empfiehlt es sich auf \url{tex.stackexchange.com} nach möglichen Lösungen zu suchen, oder falls nicht vorhanden auch selber eine Frage zu stellen.
+If you have a specific problem and you do not know how to proceed you can first try google and if this does not help you can visit \url{tex.stackexchange.com} and try to ask your question there.
 
 \section[Hello World - ein erstes Beispiel]{Hello World}
 \begin{lstlisting}
@@ -140,17 +140,17 @@ Hello World
 \end{lstlisting}
 
 \begin{itemize}
-\item \verb+\documentclass[10pt]{article}+ definiert die Dokumentvorlage (article, report, book). 10pt gibt die Standardschriftgr"osse des Dokumentes an.
-\item \verb+\usepackage[•]{•}+ l"adt sogenannte Pakete die gewisse Optionen hinzuf"ugen oder Dinge vereinfachen. In diesem Fall erlauben Zeile 2 und 3 die direkte Eingabe von Umlauten (anstatt \verb+"a+)
-\item \verb+\begin{document} \end{document}+ stellen den tats"achlichen Anfang und das Ende des Dokumentes dar. Alles was vor oder nach diesen Befehl auftaucht, wird nicht in dem pdf erscheinen.
-\item \% erlaubt das Setzen von Kommentaren. Alles nach einem \%-Zeichen wird ignoriert und sind nur im Editor, aber nicht im Ausgabepdf ersichtlich.
+\item \verb+\documentclass[10pt]{article}+ defines the document class (article, report, book). 10pt is the base font size for the document.
+\item \verb+\usepackage[•]{•}+ laods the respective package.
+\item \verb+\begin{document} \end{document}+ The begin and end of the content of the document
+\item \% used for comments.
 \end{itemize}
 
-Der Code der \textbf{VOR} \verb+\begin{document}+ kommt, nennt sich \textit{Pr"aambel}. Dorthin geh"oren fast alle Befehle, die nicht direkt zum Inhalt geh"oren (also \verb+\usepackage[•]{•}+-Befehle zum Beispiel oder setzen von Dokumentoptionen (Kopf-/Fusszeilenlayout).
+Code written \textbf{before} \verb+\begin{document}+ is called preamble. Every command that is not content belongs there (\textit{usepackage} commands e.g.)
 
 \newpage
 
-\section{Titelseite}
+\section{Title page}
 \begin{lstlisting}
 \documentclass[10pt]{article}
 
@@ -175,13 +175,13 @@ Der Code der \textbf{VOR} \verb+\begin{document}+ kommt, nennt sich \textit{Pr"a
 \end{lstlisting}
 
 \begin{itemize}
-\item \verb+\usepackage[ngerman]{babel}+ ist das Sprachpaket f"ur \LaTeX. Ist zum Beispiel daf"ur zust"andig, dass W"orter richtig getrennt werden.
-\item \verb+\title{•}+ definiert den Titel. Dieser Befehl alleine generiert aber noch kein Titelblatt - erst das setzen von \verb+\maketitle+ f"ugt tats"achlich eine Titelseite ein.
-\item \verb+\author{•}+ definiert den oder die Autoren. Mehrere Authoren werden mit \verb+\and+ verkn"upft.
-\item \verb+\\+ erzeugt eine neue Zeile.
-\item \verb+\date{\today}+ f"ugt das heutige Datum auf der Titelseite hinzu. \verb+\today+ kann mit einem beliebigen String ersetzt werden, der dann auf der Titelsite eingef"ugt wird.
-\item \verb+\maketitle+ Titelseite wird dort im Dokument erstellt, wo dieser Befehl steht. Wenn man also die Titelseite als erstes Blatt will, setzt man diesen Befehl direkt nach \verb+\begin{document}+
-\item \verb+\newpage+ f"ugt eine neue Seite ein.
+\item \verb+\usepackage[ngerman]{babel}+ is the language package for \LaTeX. Responsible for proper hyphenation.
+\item \verb+\title{•}+ defines the title. This command does not create the title page. For this you need \verb+\maketitle+ (which will then use the information provided by \verb+\title{}+.
+\item \verb+\author{•}+ defines one or more authors if connected with an \verb+\and+.
+\item \verb+\\+ inserts new line
+\item \verb+\date{\today}+ inserts current date to the title page. \verb+\today+ can be replaced with any string, does not necessarily have to be a date.
+\item \verb+\maketitle+ Places the title page where the command is writting. Usually just after \verb+\begin{document}+.
+\item \verb+\newpage+ inserts new page.
 \end{itemize}
 
 Alternativ kann man seine Titelseite auch selber gestalten. Dafür bietet sich die \texttt{titlepage}-Umgebung an. Also
