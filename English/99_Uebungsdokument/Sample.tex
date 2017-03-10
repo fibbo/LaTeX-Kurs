@@ -38,7 +38,7 @@
 
 % Bibliography packages
 \usepackage[style=authoryear, backend=biber, maxnames=5]{biblatex}
-\addbibresource{bibliography.bib}
+\addbibresource[datatype=bibtex]{bibliography.bib}
 
 
 
@@ -66,7 +66,7 @@
 \author{John Doe\\ University Here\thanks{john.doe@uni-here.edu} \and Michael Smith\\University there\thanks{michael.smith@uni-there.edu}}
 
 % Should be loaded last to avoid overwriting of package settings
-\usepackage[pdftex]{hyperref} %Creates clickable references in the document - ideally loaded last in the document preambel
+\usepackage{hyperref} %Creates clickable references in the document - ideally loaded last in the document preambel
 
 %%%%%%%% BEGIN OF DOCUMENT %%%%%%%%
 \begin{document}
@@ -294,7 +294,7 @@ Fig.~\ref{fig:formeln} shows a selection of formulas. Also it shows that a figur
 Following a quote from a textbook, suitably annotated with footnotes\marginpar{Footnotes}
 
 \begin{quote}
-Longer, additional explanations are often not placed within the running text since context can get lost quickly. Rather we set a marking -- often a raised number\footnote{often in increasing order} -- which refer to the explanation\footnote{be aware that too many footnotes can disturb the reading rhythm as well. Always consider if you really need this annotation and if you cannot keep it in the running text.}. In the footer this number will be repeated and the corresponding text will be typeset in a smaller font size\footnote{font size \texttt{footnotesize}}. For a clear separation between running text and footnotes a small horizontal line will be place between the two\footnote{some publications have a line across the whole page even.}.
+Longer, additional explanations are often not placed within the running text since context can get lost quickly. Rather we set a marking -- often a raised number\footnote{often in increasing order} -- which refer to the explanation\footnote{be aware that too many footnotes can disturb the reading rhythm as well. Always consider if you really need this annotation and if you cannot keep it in the running text.}. In \cite{lkgt} the footer this number will be repeated and the corresponding text will be typeset in a smaller font size\footnote{font size \texttt{footnotesize}}. For a clear separation between running text and footnotes a small horizontal line will be place between the two\footnote{some publications have a line across the whole page even.}.
 
 It is quite simple to place footnotes in the running text. The numbering is handled automatically by \ltx{}. If you add more footnotes or delete some later the numbering will automatically be updated\footnote{Furthermore, \ltx{} also manages the page on which the footnote will appear which should always appear on the same page as the raised number. \ltx{} succeeds at this most of the time (except under some tricky circumstances) whereas Microsoft Word fails here above average.}. The numbering will be reset after every chapter (this concerns the document classes \textit{report} and \textit{book}). 
 

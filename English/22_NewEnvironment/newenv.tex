@@ -12,7 +12,7 @@
 
 
 
-% Default fixed font does not support bold face
+% % Default fixed font does not support bold face
 \DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
 \DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
 
@@ -32,6 +32,8 @@ showstringspaces=false            %
 }
 
 \DeclareFloatingEnvironment[fileext=cds,placement={!ht},name=Code Snippet]{codesnippet}
+\DeclareFloatingEnvironment[fileext=asf,placement={!ht},name=Code Snippet]{asdf}
+
 
 \captionsetup{margin=0pt,font=small,labelfont=sc,labelformat=simple,format=plain,indention=3mm,
  labelsep=endash,textfont=sf,font=sf,singlelinecheck=on,figurename=Fig.,tablename=Tab.}
@@ -45,10 +47,21 @@ showstringspaces=false            %
 
 \begin{document}
   \listofcodesnippets
+  \listofasdfs
 \begin{codesnippet}[ht]
   \begin{lstlisting}
     asdf
   \end{lstlisting}
   \caption{test}
 \end{codesnippet}
+
+\begin{figure}
+	text
+	\caption{asdf}
+\end{figure}
+
+\begin{asdf}
+	sdf
+	\caption{asdf}
+\end{asdf}
 \end{document}

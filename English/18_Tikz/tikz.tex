@@ -17,20 +17,20 @@
 \setlength{\parindent}{0pt}
 \begin{document}
 
-\section{Einfache Tikz Befehle}
-Tikz steht fuer: \textit{Tikz ist kein Zeichenprogramm}, also ein rekursives Akronym. Tikz erstellt uns Vektorgrafiken. Vektorgrafiken lassen sich beliebig skalieren.
+\section{Simple tikz commands}
+Tikz stands for: \textit{Tikz ist kein Zeichenprogramm}, a recursive acronym. Tikz creates vector graphics which can be scaled arbitrarily.
 
-Eine ausf"uhrlichere Einleitung in Tikz findet ihr hier: \url{http://cremeronline.com/LaTeX/minimaltikz.pdf}
+A more extensive introduction to Tikz can be found here: \url{http://cremeronline.com/LaTeX/minimaltikz.pdf}
 
 
-\subsection{Draw-Befehl}
+\subsection{Draw-Command}
 \begin{tikzpicture}
 \draw (0,0) --(1,2);
 \end{tikzpicture}
 
 \subsection{Optionen}
 
-Man kann sich zum Beispiel ein Hilfsgitter zeichnen lassen:
+Draw a helper grid
 
 \begin{tikzpicture}
 \draw (0,0) --(1,2) -- (2,3) -- (1,0);
@@ -43,10 +43,10 @@ Man kann sich zum Beispiel ein Hilfsgitter zeichnen lassen:
 \draw (0,0) -- (1,2) -- (2,3) -- (1,0);
 \draw (0,3) -- (1.5,0.5);
 \end{tikzpicture}
-\caption{Tikz-Bilder kann man auch in einer Float verwenden}
+\caption{You can use Tikz figures in floating environments}
 \end{figure}
 
-\subsection{Vektoren/Pfeile}
+\subsection{Vectors/Arrows}
 
 \begin{tikzpicture}
 \draw [<->] (0,2) -- (0,0) -- (3,0);
@@ -54,7 +54,7 @@ Man kann sich zum Beispiel ein Hilfsgitter zeichnen lassen:
 \draw [<-] (0,1) -- (2,3);
 \end{tikzpicture}
 
-\subsection{"Andern der Linienbreite}
+\subsection{Changing of line width}
 
 \begin{tikzpicture}
 \draw [ultra thick] (0,1) -- (2,1);
@@ -62,7 +62,7 @@ Man kann sich zum Beispiel ein Hilfsgitter zeichnen lassen:
 \draw [thin] (0,0) -- (2,0);
 \end{tikzpicture}
 
-M"ogliche Befehle um die Linienbreite zu "andern:
+Possible line widths:
 
 \begin{itemize}
 \item ultra thin
@@ -74,9 +74,9 @@ M"ogliche Befehle um die Linienbreite zu "andern:
 \item ultra thick
 \end{itemize}
 
-\section{Funktionen zeichnen mit Tikz}
+\section{Draw functions with Tikz}
 \begin{center}
-\begin{tikzpicture}[xscale=13,yscale=3.8] % Man kann die Zeichnung auch skalieren
+\begin{tikzpicture}[xscale=13,yscale=3.8] % You can also scale the drawing
 \draw [<->] (0,0.8) -- (0,0) -- (0.5,0);
 \draw[green, ultra thick, domain=0:0.5] plot (\x, {0.025+\x+\x*\x});
 \end{tikzpicture}
@@ -84,14 +84,14 @@ M"ogliche Befehle um die Linienbreite zu "andern:
 
 \begin{figure}[h]
 \centering
-\begin{tikzpicture}[yscale=1.5] % Hier ist nur die y-Achse skaliert
+\begin{tikzpicture}[yscale=1.5] % Only y axis is scaled
 \draw [help lines, <->] (0,0) -- (6.5,0);
 \draw [help lines, ->] (0,-1.1) -- (0,1.1);
 \draw [green,domain=0:2*pi] plot (\x, {(sin(\x r)* ln(\x+1))/2});
 \draw [red,domain=0:pi] plot (\x, {sin(\x r)});
 \draw [blue, domain=pi:2*pi] plot (\x, {cos(\x r)*exp(\x/exp(2*pi))});
 \end{tikzpicture}
-\caption{In Tikz kann man Winkel in Grad oder Radiant angeben. Will man es in Radiant angeben, muss man dies mit einen \texttt{r} so kennzeichnen.}
+\caption{You can work with degrees or radian. If you want to work with radian you have to indicate this with \texttt{r}}
 \end{figure}
 
   \begin{tikzpicture}
@@ -118,7 +118,7 @@ M"ogliche Befehle um die Linienbreite zu "andern:
   \end{tikzpicture}
 
 
-\section{Verwendung von "`Nodes"'}
+\section{Usage of nodes}
 \begin{tikzpicture}
 \draw [thick, <->] (0,2) -- (0,0) -- (2,0);
 \node at (1,1) {yes};
@@ -135,7 +135,7 @@ M"ogliche Befehle um die Linienbreite zu "andern:
 \node [right] at (1,1) {right};
 \end{tikzpicture}
 
-\section{Sich wiederholende Strukturen in Tikz}
+\section{Repeating structures in Tikz}
 \begin{tikzpicture}[yscale = 0.2]
 \foreach \x in {1,2,...,6}{
 \draw (\x,-0.5) -- (\x,1);
