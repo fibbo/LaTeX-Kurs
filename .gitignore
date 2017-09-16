@@ -12,3 +12,5 @@
 *.run.xml
 *.lof
 *.lot
+*.sublime-project
+*.sublime-workspace
