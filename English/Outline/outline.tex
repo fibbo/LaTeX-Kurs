@@ -1,42 +1,68 @@
-\documentclass[10pt]{scrartcl}
+\documentclass[10pt, a4paper]{beamer} %handout fuer eine gedruckte version der slides
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%
+\usetheme{metropolis}
 
-\pagestyle{empty}
-\usepackage[english]{babel}
-\usepackage[top=2cm, left=2cm, right=2cm, bottom=2cm]{geometry}
-\setlength{\parindent}{0ex}
-\begin{document}
+\title{\LaTeX\ Introduction}
+\author{Philipp Gloor\inst{1}}
+\institute[University of Zurich] % (optional)
 {
-
-\hspace*{\fill}\Huge\bfseries \LaTeX - Introduction into\hspace*{\fill} \\\hspace*{\fill}the typesetting system\hspace*{\fill}
-
-\vspace{0.8cm}
-
-\hspace*{\fill}\huge\bfseries  Outline \hspace*{\fill}
-
-\vspace{1cm}
+  \inst{1}%
+  philipp.gloor@gmail.com
 }
+\date{Septemer 2017} % (optional)
 
-The course covers many different small topics with small examples. Following is an outline of areas in which these examples can be categorized in.
+\subject{\LaTeX}
 
-    \section{Basics of \LaTeX} % (fold)
-    You will learn about the basics of \LaTeX. You will learn about the philosophy behind \LaTeX\ and the tools needed to start working with \LaTeX. The basic structure of \LaTeX document will be discussed together with the preamble of a document and the loading of packages.
+\begin{document}
 
-    \section{Technalities about \LaTeX}
+    \begin{frame}
+    \titlepage
+    \end{frame}
+    \begin{frame}{Basics of \LaTeX}
+        You will learn about the basics of \LaTeX. You will learn about the philosophy behind \LaTeX\ and the tools needed to start working with \LaTeX. The basic structure of \LaTeX document will be discussed together with the preamble of a document and the loading of packages.
+    \end{frame}
+    
+
+    
+
+    \begin{frame}{Technalities about \LaTeX}
     \LaTeX\ works differently than programs like e.g. Word which is a WYSIWYG editor (what you see is what you get). You will see examples about such technicalities. For example hyphenation, line formatting, line spread etc. Also you will understand how \LaTeX\ commands work and how to interpret the most common error messages.
+    \end{frame}
 
-    \section{Structuring a document}
+    \begin{frame}{Structuring a document}
     What are the options to structure a \LaTeX\ document? Apart from simple sectioning commands there are many options that help a reader to navigate through the document - for example: in-document references, link annotations for navigating the document.
+    \end{frame}
 
-    \section{Layout of a document}
+    \begin{frame}{Layout of a document}
     Changing the layout should be done very carefully in \LaTeX\ because one of the main reasons of why \LaTeX\ is so successful is because it does most of the layout itself and it does it very well. However there are cases where the writer wants to change a few things like the font face, the page dimensions or other small things.
+    \end{frame}
 
-    \section{Typesetting math formulas}
+    \begin{frame}[t]{Typesetting math formulas}
+    \vspace{1cm}
+    \[ \rho\left( \frac{\partial \mathbf{v}}{\partial t} + \mathbf{v}\cdot\nabla\mathbf{v}\right) = -\nabla p + \nabla\cdot\mathsf{T}+\mathbf{f} \]
+
+    \vspace*{\fill}
     One of the core features of \LaTeX\ is the setting of mathematical formulas. Once the quirks are understood this becomes very easy.
+    \vspace*{\fill}
+    \end{frame}
+    
 
-    \section{Other content}
+    \begin{frame}{Other content}
     Apart from text content you can also insert tables, figures or self drawn images into a \LaTeX\ document. This part should cover all the important aspects of how to insert graphics or create tables in \LaTeX. Some editors help with the creation of tables but you will learn how to create tables by hand.
+    \end{frame}
 
-    \section{Bibliography}
+    
+    \begin{frame}{Bibliography}
     Creation of a bibliography that will be placed into the document. This includes the whole workflow of creating a database with cited sources to the compilation of the \LaTeX\ document which then contains references and a bibliography.
+
+    The course covers many different small topics with small examples. Following is an outline of areas in which these examples can be categorized in.
+    \end{frame}
+
+
+
+
+
     
 \end{document}
