@@ -1,10 +1,10 @@
-\documentclass[10pt, a4paper]{article}
+\documentclass[10pt,twoside, a4paper]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
 \usepackage[english]{babel}
 \usepackage{blindtext}
-\usepackage[top=2.5cm,left=1.5cm,right=2cm,bottom=2.5cm]{geometry}
+% \usepackage[top=2.5cm,left=1.5cm,right=2cm,bottom=2.5cm]{geometry}
 \pagestyle{headings} %Andere optionen: plain, empty, headings
 
 %http://en.wikibooks.org/wiki/LaTeX/Page_Layout#Customizing_with_fancyhdr
@@ -18,10 +18,13 @@
 \renewcommand{\headrulewidth}{0.5pt} %Setzt die Breite der Kopfzeilenlinie auf 0.5pt
 \renewcommand{\footrulewidth}{0.5pt} %Setzt die Breite der Fusszeilenlinie auf 0.5pt
 
-\fancyhead[l]{Testdokument}
-\fancyhead[c]{\bfseries\rightmark} %aktuelle Sektion/Subsektion
-\fancyhead[r]{\slshape\nouppercase\leftmark}  %aktuelles Kapitel/Sektion
-\fancyfoot[c]{\thepage}
+\fancyhead[RE]{Right even}
+\fancyhead[RO]{Right odd}
+\fancyhead[LE]{Left even}
+\fancyhead[LO]{Left odd}
+% \fancyhead[c]{\bfseries\rightmark} %aktuelle Sektion/Subsektion
+% \fancyhead[r]{\slshape\nouppercase\leftmark}  %aktuelles Kapitel/Sektion
+% \fancyfoot[c]{\thepage}
 
 
 \begin{document}
@@ -40,6 +43,17 @@ asdf
 % subsection subeinleitung2 (end)
 \newpage
 \section{Theorie}
+\blindtext
+\subsection{Satz}
+\blindtext
+
+\blindtext
+
+\blindtext
+
+\blindtext
+
+\section{Fortsetzung}
 \blindtext
 \subsection{Satz}
 \blindtext

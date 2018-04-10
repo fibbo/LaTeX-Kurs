@@ -1,8 +1,42 @@
 \documentclass[10pt, a4paper]{beamer} %handout fuer eine gedruckte version der slides
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-%
 \usetheme{metropolis}
+
+\usepackage{url}
+\usepackage{polyglossia}
+\setmainlanguage{english}
+
+\usepackage{listings,xcolor}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
+\usepackage{booktabs}
+
+\makeatletter
+\newcommand*{\currentname}{\@currentlabelname}
+\makeatother
+
+\usepackage{fontspec}
+% \setmainfont{UbuntuMono}
+\newfontfamily\Bera{Bitstream Vera Sans Mono}[Scale=0.85]
+
+\definecolor{mDarkTeal}{HTML}{23373b}
+\definecolor{mLightBrown}{HTML}{EB811B}
+\definecolor{mDarkBlue}{HTML}{0F3470}
+\definecolor{mDarkGrey}{HTML}{999999}
+\definecolor{mLighterGrey}{HTML}{CCCCCC}
+\definecolor{mLightGrey}{rgb}{0.95,0.95,0.95}
+\definecolor{mLightBlue}{HTML}{212751}
+
+\newcommand{\lb}[1]{{\color{mLightBrown}#1}}
+
+\newcommand{\bblock}[3]{
+        \begin{block}{#1}
+        #2
+    \end{block}
+}
+
+\setbeamercolor{block title}{fg=mDarkTeal}
+\setbeamercolor{frametitle}{bg=mDarkBlue, fg=mLightGrey}
 
 \title{\LaTeX\ Introduction \hspace*{\fill}\includegraphics[width=4cm]{../../uzhpres/tex/uzh_logo_e_pos.pdf}}
 \author{Philipp Gloor\inst{1}}
@@ -43,7 +77,7 @@
 
 \begin{block}{Email}
 \begin{itemize}
-    \item[] philipp.gloor@gmail.com
+    \item philipp.gloor@gmail.com
 \end{itemize}
     
 \end{block}
@@ -74,17 +108,22 @@
 \end{frame}
 
     \begin{frame}{Basics of \LaTeX}
-        You will learn about the basics of \LaTeX. You will learn about the philosophy behind \LaTeX\ and the tools needed to start working with \LaTeX. The basic structure of \LaTeX\ document will be discussed together with the preamble of a document and the loading of packages.
+        \begin{itemize}
+            \item What is needed to work with \LaTeX (distribution, editor)
+            \item Creating a minimal document
+            \item Document classes
+            \item Loading and using packages
+        \end{itemize}
     \end{frame}
     
 
     \begin{frame}{Technalities about \LaTeX}
-    \LaTeX\ works differently than programs like e.g. Word which is a WYSIWYG editor (what you see is what you get). You will see examples about such technicalities like:
+    \LaTeX\ works differently than programs like e.g. Word which is a WYSIWYG editor (what you see is what you get). You will see examples of such occurences like:
 
     \begin{itemize}
-         \item Hyphenation
-         \item Line formatting
-         \item Line spread
+         \item Change font face
+         \item Change paragraph behaviour
+         \item Change line spread
      \end{itemize}
 
      You will also understand how \LaTeX\ commands work and how to interpret the most common error messages.
@@ -93,12 +132,17 @@
     \begin{frame}{Structuring a document}
     What are the options to structure a \LaTeX\ document? Apart from simple sectioning commands there are many options that help a reader to navigate through the document - for example:
     \begin{itemize}
+         \item Chapter/Section/Subsection etc
+         \item Table of contents
          \item In-document references
          \item Link annotations for navigating the document
      \end{itemize}
     \end{frame}
 
     \begin{frame}{Layout of a document}
+        \begin{itemize}
+            \item Generally: Changing layout should be done sparsely
+        \end{itemize}
     Changing the layout should be done very carefully in \LaTeX\ because one of the main reasons of why \LaTeX\ is so successful is because it does most of the layout itself and it does it very well. However there are cases where the writer wants to change a few things like the font face, the page dimensions or other small things.
     \end{frame}
 
@@ -113,7 +157,11 @@
     
 
     \begin{frame}{Other content}
-    Apart from text content you can also insert tables, figures or self drawn images into a \LaTeX\ document. This part should cover all the important aspects of how to insert graphics or create tables in \LaTeX. Some editors help with the creation of tables but you will learn how to create tables by hand.
+    \begin{itemize}
+        \item Tables
+        \item Figures
+        \item Images
+    \end{itemize}
     \end{frame}
 
     
