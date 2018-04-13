@@ -1,0 +1,23 @@
+\documentclass[10pt, a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{lipsum}
+
+
+\begin{document}
+
+
+\rowcolors{2}{green!10}{red!5}
+\begin{tabular}{ l | p{8cm}  r }
+  \textbf{a} & \textbf{b} & \textbf{c} \\
+  \hline \hline
+  16:00 -- 17:00 & \lipsum[1] & blubb \\
+  17:00 -- 18:00 & \cellcolor{blue!25} other color & The end \\
+  18:00 -- 19:00 & \multicolumn{2}{c}{Finally dinner} \\
+\end{tabular}\\[1em]
+
+
+\end{document}

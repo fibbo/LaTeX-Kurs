@@ -32,6 +32,8 @@ Table in the middle of running text.
 3 & 4\\
 \hline
 \end{tabular}. This table is in the running text.
+
+
 \section{Multirow und -column}
 
 \setlength{\tabcolsep}{5pt} %Spacing between columns
@@ -132,23 +134,23 @@ Address: & Bagshot Row 56, 10982 Hobbiton \\
 \end{landscape}
 
 \begin{table}[ht]
-    \centering
-    \caption{Revisions}
-     \begin{threeparttable}
-    \centering
-        \begin{tabular}{cccc}
-        \toprule
-            Title 1 & Title 2 & Title 3 & Title 4          \\
-        \midrule
-            Cell 1  & Cell 1  & Cell 3  & Cell 4 \tnote{a} \\
-            Cell 1  & Cell 1  & Cell 3  & Cell 4 \tnote{b} \\
-        \bottomrule
-        \end{tabular}
-        \begin{tablenotes}
-            \item[a] My Note.
-            \item[b] My Other Note.
-        \end{tablenotes}
-     \end{threeparttable}
-    \end{table}
+  \centering
+  \caption{Revisions}
+   \begin{threeparttable}
+  \centering
+      \begin{tabular}{cccc}
+      \toprule
+          Title 1 & Title 2 & Title 3 & Title 4          \\
+      \midrule
+          Cell 1  & Cell 1  & Cell 3  & Cell 4 \tnote{a} \\
+          Cell 1  & Cell 1  & Cell 3  & Cell 4 \tnote{b} \\
+      \bottomrule
+      \end{tabular}
+      \begin{tablenotes}
+          \item[a] My Note.
+          \item[b] My Other Note.
+      \end{tablenotes}
+   \end{threeparttable}
+\end{table}
 
 \end{document}

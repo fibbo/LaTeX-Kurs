@@ -1,0 +1,33 @@
+\documentclass[10pt, a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{threeparttable}
+\usepackage{booktabs}
+
+\setlength{\belowcaptionskip}{5pt plus 3pt minus 2pt} 
+
+\begin{document}
+
+\begin{table}[ht]
+  \centering
+  \caption{Revisions}
+   \begin{threeparttable}
+  \centering
+      \begin{tabular}{cccc}
+      \toprule
+          Title 1 & Title 2 & Title 3 & Title 4          \\
+      \midrule
+          Cell 1  & Cell 1  & Cell 3  & Cell 4 \tnote{a} \\
+          Cell 1  & Cell 1  & Cell 3  & Cell 4 \tnote{b} \\
+      \bottomrule
+      \end{tabular}
+      \begin{tablenotes}
+          \item[a] My Note.
+          \item[b] My Other Note.
+      \end{tablenotes}
+   \end{threeparttable}
+\end{table}
+
+
+\end{document}
