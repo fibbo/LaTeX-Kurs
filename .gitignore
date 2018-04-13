@@ -1,4 +1,5 @@
 *.pdf
+!uzh*.*pdf
 *.aux
 *.idx
 *.toc
