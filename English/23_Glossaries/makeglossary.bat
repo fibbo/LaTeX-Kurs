@@ -1,0 +1,1 @@
+makeindex -o *.gls *.glo
