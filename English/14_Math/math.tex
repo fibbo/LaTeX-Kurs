@@ -19,18 +19,18 @@
 
 \url{http://detexify.kirelabs.org/classify.html}
 
-Mathematikformeln im Text: \( 2 + 3x = 4\) und fügt sich einfach so in den Text ein.
+Simple mathematical equation: \( 2 + 3x = 4\) Placed within running text.
 
-Man kann eine Formel aber auch explizit hervorheben.
+Explicitly emphasize a formula.
 
 \[ 2x + 3x = 4 \]
 
-Oder man kann eine Formel auch mit einer Nummerierung versehen:
+Again emphasized but now also numbered:
 \begin{equation}
 2x + 3x = 4
 \end{equation}
 
-\subsection{Potenzen und Indizes}
+\subsection{Powers and indices}
 
 \[ 2^x + 3a_i + c^{x+y}d_{ij} = z  \]
 
@@ -46,15 +46,15 @@ Leading powers and indices:
 
 \subsubsection{Mehrfachbrüche}
 
-Mehrfachbrüche können unter Umständen innerhalb von Text zusammengedrückt werden. \( \frac{\frac{a}{x-y}+\frac{b}{x+y}}{1+\frac{a-b}{a+b}} = 1. \) Das kann man auch gr\"osser setzen mit dem Befehl \texttt{dfrac} so wie hier: \( \qquad \dfrac{\frac{a}{x-y}+\frac{b}{x+y}}{1+\frac{a-b}{a+b}} = 1 \). Grössere mathematische Ausdrücke sollten deshalb frei und nicht im Textfluss dargestellt werden.
+Multifractions get squashed when placed inside text. \( \frac{\frac{a}{x-y}+\frac{b}{x+y}}{1+\frac{a-b}{a+b}} = 1. \) Using \texttt{dfrac} can increase spacing within the fractions: \( \qquad \dfrac{\frac{a}{x-y}+\frac{b}{x+y}}{1+\frac{a-b}{a+b}} = 1 \). It's better to place mathematical expressions apart from the rest of the text.
 
 \[\frac{\frac{a}{x-y}+\frac{b}{x+y}}{1+\frac{a-b}{a+b}} = 1 \qquad \dfrac{\frac{a}{x-y}+\frac{b}{x+y}}{1+\frac{a-b}{a+b}} = 1 \]
 
-\subsection{Wurzeln}
+\subsection{Roots}
 
 \[ \sqrt{x},\quad \sqrt[n]{x}  \]
 
-\subsection{Matrizen}
+\subsection{Matrices}
 
 \begin{equation}
 \begin{bmatrix}
@@ -65,14 +65,14 @@ Mehrfachbrüche können unter Umständen innerhalb von Text zusammengedrückt we
 \end{equation}
 
 \subsection{Text in der Mathematikumgebung}
-\( x^2 \geq 0\quad für alle x \leq 0 \)\\ %Behandelt Text als Variable
-\( x^2 \geq 0\quad \mathrm{für alle } x \leq 0 \)\\ %Behandelt Text als Variable aber hochgestellter
-\( x^2 \geq 0\quad \mbox{für alle } x \leq 0 \)\\ %respektiert Leerzeichen und Umlaute
-\( x^2 \geq 0\quad \text{für alle } x \leq 0 \)\\ %ist besser für ^ und _ 
-Hochgestellter Text in mathematischer Formel mit mbox: \quad \( y^{\mbox{Potenz}}=27\)\\
-Hochgestellter Text in mathematischer Formel mit text: \quad \( y^{\text{Potenz}}=27\)
+\( x^2 \geq 0\quad für alle x \leq 0 \)\\ %Treat text like a variable
+\( x^2 \geq 0\quad \mathrm{für alle } x \leq 0 \)\\ %Treat text as variable but not cursive (roman)
+\( x^2 \geq 0\quad \mbox{für alle } x \leq 0 \)\\ %respects spaces and umlaute
+\( x^2 \geq 0\quad \text{für alle } x \leq 0 \)\\ %best suited for powers and indices 
+Superscripted text with mbox: \quad \( y^{\mbox{Potenz}}=27\)\\
+Subscripted text with text: \quad \( y^{\text{Potenz}}=27\)
 
-\subsection{Allgemeine mathematische Funktionen und Integrale}
+\subsection{General mathematical functions}
 
 \( \int_{0}^{\frac{\pi}{2}} \sin x\,\mathrm{d}x \qquad
 \int\limits_{0}^{\frac{\pi}{2}} \sin x\,\mathrm{d}x \qquad\qquad
@@ -85,7 +85,7 @@ Hochgestellter Text in mathematischer Formel mit text: \quad \( y^{\text{Potenz}
 \int\limits_{-\infty}^{+\infty}x^2\,\mathrm{d}x\]
 
 
-%Nicht mehr verwenden!
+%Do not use eqnarray!
 %\begin{eqnarray}
 %a & = & 2x \\
 %0 & = & 3
@@ -96,40 +96,37 @@ Hochgestellter Text in mathematischer Formel mit text: \quad \( y^{\text{Potenz}
 \end{equation}
 
 
-%Unterdrücke Nummerierung der Gleichung mit \nonumber 
+%Suprress numbering of equation with \nonumber 
 \begin{align}
   (a+b)^2    &=    a^2+2ab+b^2 \nonumber \\
   (a-b)^2    &=    a^2-2ab+b^2 \nonumber \\
   (a+b)(a-b) &=    a^2-b^2
 \end{align}
 
-\subsection{Komplizierter Ausdruck}
-\begin{figure}[h]
+\subsection{A more complicated expression}
 \[ \rho\left( \frac{\partial \mathbf{v}}{\partial t} + \mathbf{v}\cdot\nabla\mathbf{v}\right) = -\nabla p + \nabla\cdot\mathsf{T}+\mathbf{f} \]
 
 \[ \overbrace{x^2 + \underbrace{y^2}_\text{part of the equation}}^\text{whole equation} \]
 
 \[ \overbrace{x^2 + \underbrace{y^2}_{\mathclap{\text{part of the equation}}}}^{{\text{whole equation}}} \]
-\caption{Mathematische Formeln}
-\end{figure}
 
 \begin{equation}
 []
 \end{equation}
 
-\begin{figure}
-Gegeben sei die Funktionenschar
+\begin{figure}[h!]
+Given a family of functions
 
 \[ f_a(x) = \frac{x+a}{x^2} \text{mit } a \in \mathbb{R} \]
 
 \begin{itemize}
-\item Untersuchen Sie die Funktionenschar \( f_a \) auf ihre maximale Definitionsmenge \( \mathbb{D} \).
+\item Investige the family of functions \( f_a \) for their domain \( \mathbb{D} \).
 \item \( x \to \infty \)
-\item Zeichnen Sie den Graphen \( G_{f_1} \) im Intervall \( I = [-4,4] \)
-\item Zeigen Sie, dass 
+\item Show the graph \( G_{f_1} \) in the intervall \( I = [-4,4] \)
+\item Show that 
 \[ F(x) = x+ (x+1)\cdot\ln(x+1)-2x\cdot\ln(x) \]
-eine Stammfunktion zu \( g(x) = \ln\left(\dfrac{x+1}{x^2}\right) \)
-\item Bestimmen Sie eine ...
+the antiderivative of \[ g(x) = \ln\left(\dfrac{x+1}{x^2}\right) \] is
+\item Determine one \ldots
 
 \[ F_x(x) = \int\limits_2^x\ln\left(f_1(t)\right)\mathrm{d}t \]
 
