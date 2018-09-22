@@ -15,3 +15,5 @@
 *.lot
 *.sublime-project
 *.sublime-workspace
+
+!Sample.pdf
