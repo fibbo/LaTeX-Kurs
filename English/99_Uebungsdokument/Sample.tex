@@ -12,6 +12,7 @@
 
 \usepackage{booktabs}  %booktabs allows \toprule, \midrule, \bottomrule.
 \usepackage{threeparttable} % threeparttable allows table notes, and adjusting the width of the caption to the width of the table
+\usepackage{multirow}
 
 
 % With the next 3 parameters you can control the behaviour of latex how it handles floats and text. Normally it is not possible to fill a single page with only floats because LaTeX tries to achieve a certain text/float ratio per page. With these paremters this can be changed.
@@ -165,7 +166,7 @@ Typography is a trade that has to be learned. Someone not trained in this often 
 \centering
 \begin{tabular}{lccc}
 \toprule
-\textbf{\ltx-Command} & \multicolumn{3}{c}{\textbf{Base size}}\\
+\multirow{2}{*}{\textbf{\ltx-Command}} & \multicolumn{3}{c}{\textbf{Base size}}\\
 \cline{2-4} & \textbf{10\,pt} & \textbf{11\,pt} & \textbf{12\,pt}\\
 \midrule
 \midrule
